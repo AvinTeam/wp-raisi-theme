@@ -10,7 +10,6 @@ define('RAISI_PATH', get_template_directory() . "/");
 define('RAISI_INCLUDES', RAISI_PATH . 'includes/');
 define('RAISI_CLASS', RAISI_PATH . 'classes/');
 define('RAISI_CORE', RAISI_PATH . 'core/');
-define('RAISI_FUNCTION', RAISI_PATH . 'functions/');
 define('RAISI_VIEWS', RAISI_PATH . 'views/');
 
 define('RAISI_URL', get_template_directory_uri() . "/");
@@ -20,9 +19,14 @@ define('RAISI_JS', RAISI_ASSETS . 'js/');
 define('RAISI_IMAGE', RAISI_ASSETS . 'image/');
 define('RAISI_VENDOR', RAISI_ASSETS . 'vendor/');
 
+require_once RAISI_CORE . '/accesses.php';
 
+require_once RAISI_INCLUDES . '/init.php';
+require_once RAISI_INCLUDES . '/styles.php';
+require_once RAISI_INCLUDES . '/theme_filter.php';
+require_once RAISI_INCLUDES . '/theme-function.php';
+require_once RAISI_INCLUDES . '/jdf.php';
 
 if (is_admin()) {
-
 
 }

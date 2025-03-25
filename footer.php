@@ -1,4 +1,3 @@
-<?php wp_footer()?>
 <!-- <footer class="container-fluid py-3 px-5 bg-white mt-5">
     <div class="text-center text-md-end">
 
@@ -16,6 +15,7 @@
     <div class="loader"></div>
 </div>
 
+<?php wp_footer()?>
 
 </body>
 
