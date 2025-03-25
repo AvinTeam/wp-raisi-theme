@@ -1,0 +1,33 @@
+* {
+  font-family: IRANSansX;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.button-error {
+  background: #b12222 !important;
+  border-color: #b12222 !important;
+}
+
+.button-error:hover {
+  background: #961313 !important;
+  border-color: #961313 !important;
+}
+
+.button-success {
+  background: #4ab122 !important;
+  border-color: #4ab122 !important;
+}
+
+.button-success:hover {
+  background: #139613 !important;
+  border-color: #139613 !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
