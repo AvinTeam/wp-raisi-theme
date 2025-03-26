@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function gregorian_to_jalali($g_y, $g_m, $g_d, $mod = '')
 {
@@ -6,7 +6,7 @@ function gregorian_to_jalali($g_y, $g_m, $g_d, $mod = '')
     $g_m   = sanitize_number($g_m);
     $g_d   = sanitize_number($g_d); /* <= :اين سطر ، جزء تابع اصلي نيست */
     $d_4   = $g_y % 4;
-    $g_a   = [0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+    $g_a   = [ 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 ];
     $doy_g = $g_a[ (int) $g_m ] + $g_d;
     if ($d_4 == 0 and $g_m > 2) {
         $doy_g++;
@@ -32,7 +32,7 @@ function gregorian_to_jalali($g_y, $g_m, $g_d, $mod = '')
         $jd = $doy_j - 186 - ($jm * 30);
         $jm += 7;
     }
-    return ($mod == '') ? [$jy, $jm, $jd] : $jy . $mod . $jm . $mod . $jd;
+    return ($mod == '') ? [ $jy, $jm, $jd ] : $jy . $mod . $jm . $mod . $jd;
 }
 
 function jalali_to_gregorian($j_y, $j_m, $j_d, $mod = '')
@@ -54,14 +54,14 @@ function jalali_to_gregorian($j_y, $j_m, $j_d, $mod = '')
         $gy = $j_y + 622;
         $gd = $doy_j - $a;
     }
-    foreach ([0, 31, ($gy % 4 == 0) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] as $gm => $v) {
+    foreach ([ 0, 31, ($gy % 4 == 0) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ] as $gm => $v) {
         if ($gd <= $v) {
             break;
         }
 
         $gd -= $v;
     }
-    return ($mod == '') ? [$gy, $gm, $gd] : $gy . $mod . $gm . $mod . $gd;
+    return ($mod == '') ? [ $gy, $gm, $gd ] : $gy . $mod . $gm . $mod . $gd;
 }
 
 function tarikh($data, $type = '')
@@ -109,7 +109,7 @@ function tarikh($data, $type = '')
     } elseif ($type == 'm' && strpos($ch_date, '/')) {
         $month = [ 'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند' ];
 
-        $new_date = $y . " " . $month[ $m ] . " " . $d;
+        $new_date = $d . " " . $month[ (absint($m) - 1) ] . " " . $y;
     } else {
         $new_date = ($time === 0) ? $ch_date : $ch_date . ' ' . $time;
     }

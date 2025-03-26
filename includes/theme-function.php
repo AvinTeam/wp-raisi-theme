@@ -7,11 +7,15 @@ function image_url($path)
     return RAISI_IMAGE . $path . '?ver=' . RAISI_VERSION;
 }
 
-function get_component($path)
+function get_view_part($path)
 {
     require RAISI_VIEWS . "/$path.php";
 }
 
+function get_component($path)
+{
+    require RAISI_COMPONENTS . "/$path.php";
+}
 function sanitize_number($text)
 {
 

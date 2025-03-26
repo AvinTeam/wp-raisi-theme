@@ -8,4 +8,4 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="">
+<body class=" mx-auto">

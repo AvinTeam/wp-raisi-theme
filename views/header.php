@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="w-100">
     <div class="d-flex flex-row align-items-center justify-content-between p-24px h-88px">
-        <div class="col-8 text-secondary-tint-1 f-20x fw-bold "><?php echo get_header_title()?></div>
-        <div class="col-4 d-flex flex-row align-items-center gap-4 justify-content-end">
+        <div class="col-7 text-secondary-tint-1 f-20x fw-bold "><?php echo get_header_title() ?></div>
+        <div class="col-5 d-flex flex-row align-items-center gap-4 justify-content-end">
 
-        <?php
+            <?php
             get_component('social-media');
             get_search_form();
         ?>
@@ -23,7 +23,8 @@
                 <img class="w-12px" src="<?php echo image_url('dif.png') ?>">
                 <span class="text-secondary-tint-1 fw-500 f-12x mx-4">خبر سوم: تغییرات جدید در قوانین مالیاتی</span>
                 <img class="w-12px" src="<?php echo image_url('dif.png') ?>">
-                <span class="text-secondary-tint-1 fw-500 f-12x mx-4">خبر چهارم: پیشنهادات ویژه برای مشتریان وفادار</span>
+                <span class="text-secondary-tint-1 fw-500 f-12x mx-4">خبر چهارم: پیشنهادات ویژه برای مشتریان
+                    وفادار</span>
             </div>
         </div>
 

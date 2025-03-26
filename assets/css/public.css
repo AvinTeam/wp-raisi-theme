@@ -106,11 +106,17 @@
   --bs-body-bg: var(--secondary-shade-3);
   --bs-body-bg-rgb: 31, 19, 51;
   --bs-btn-close-color: #800000;
+  --bs-body-color: var(--secondary-tint-1);
+  --bs-heading-color: var(--secondary-tint-1);
 }
 
 * {
   font-family: 'IRANSans';
   line-height: 24px;
+}
+
+body {
+  max-width: 1440px;
 }
 
 a {
@@ -127,6 +133,14 @@ a {
 
 .sidebar {
   width: var(--sidebar-width);
+}
+
+.ellipsis-text {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* color */
@@ -391,14 +405,6 @@ a {
 }
 
 
-
-
-
-
-
-
-
-
 /* Type System */
 .f-96px {
   font-size: 96px !important;
@@ -538,8 +544,13 @@ a {
 
 
 
+.border-start {
+  border-left: none !important;
+}
 
-
+.border-end {
+  border-right: none !important;
+}
 
 
 
@@ -937,6 +948,18 @@ input:-moz-placeholder {
   animation: ticker 30s linear infinite;
 }
 
+.sidebar-tab .nav-pills .nav-link {
+  color: var(--secondary-tint-1);
+  background-color: var(--secondary-color);
+}
+
+.sidebar-tab .nav-pills .nav-link.active {
+  background-color: var(--third-tint-5);
+}
+
+.sidebar-tab img{
+  width: 44px !important;
+}
 
 @keyframes ticker {
   0% {

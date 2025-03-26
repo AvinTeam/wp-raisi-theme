@@ -11,6 +11,7 @@ define('RAISI_INCLUDES', RAISI_PATH . 'includes/');
 define('RAISI_CLASS', RAISI_PATH . 'classes/');
 define('RAISI_CORE', RAISI_PATH . 'core/');
 define('RAISI_VIEWS', RAISI_PATH . 'views/');
+define('RAISI_COMPONENTS', RAISI_PATH . 'components/');
 
 define('RAISI_URL', get_template_directory_uri() . "/");
 define('RAISI_ASSETS', RAISI_URL . 'assets/');
@@ -27,9 +28,6 @@ require_once RAISI_INCLUDES . '/theme_filter.php';
 require_once RAISI_INCLUDES . '/theme-function.php';
 require_once RAISI_INCLUDES . '/jdf.php';
 
-
-
 if (is_admin()) {
 
 }
-
