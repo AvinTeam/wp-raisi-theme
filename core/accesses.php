@@ -92,7 +92,7 @@ class Custom_Walker_Nav_Menu_Display extends Walker_Nav_Menu {
 class Custom_Sidebar_Walker extends Walker_Nav_Menu {
     public function start_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class='submenu m-0 p-0' style='display:none;'>\n";
+        $output .= "\n$indent<ul class='submenu m-0 p-0 list-unstyled' style='display:none;'>\n";
     }
 
     public function end_lvl(&$output, $depth = 0, $args = null) {

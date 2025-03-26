@@ -83,6 +83,9 @@
   --third-shade-5: #1B1808;
 
 
+  --sidebar-width: 264px;
+
+
   --filter-primary: brightness(0) saturate(100%) invert(11%) sepia(24%) saturate(7339%) hue-rotate(350deg) brightness(122%) contrast(115%);
   --filter-primary-tint-1: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(2677%) hue-rotate(298deg) brightness(100%) contrast(89%);
   --filter-primary-tint-2: brightness(0) saturate(100%) invert(81%) sepia(13%) saturate(737%) hue-rotate(321deg) brightness(87%) contrast(101%);
@@ -102,7 +105,7 @@
   --bs-font-sans-serif: 'IRANSans';
   --bs-body-bg: var(--secondary-shade-3);
   --bs-body-bg-rgb: 31, 19, 51;
-
+  --bs-btn-close-color: #800000;
 }
 
 * {
@@ -118,6 +121,13 @@ a {
   text-align: justify;
 }
 
+.main-content {
+  width: calc(100% - var(--sidebar-width));
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+}
 
 /* color */
 
@@ -492,6 +502,50 @@ a {
   padding: 32px !important;
 }
 
+.ps-1,
+.ps-2,
+.ps-3,
+.ps-4,
+.ps-5 {
+  padding-left: 0rem !important;
+}
+
+.pe-1,
+.pe-2,
+.pe-3,
+.pe-4,
+.pe-5 {
+  padding-right: 0rem !important;
+}
+
+
+.ms-1,
+.ms-2,
+.ms-3,
+.ms-4,
+.ms-5 {
+  margin-left: 0rem !important;
+}
+
+.me-1,
+.me-2,
+.me-3,
+.me-4,
+.me-5 {
+  margin-right: 0rem !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Radius */
 
 .rounded-4px {
@@ -788,6 +842,33 @@ a {
 
 
 
+
+
+input::placeholder {
+  color: var(--secondary-tint-5) !important;
+}
+
+/* برای پشتیبانی گسترده‌تر */
+input::-webkit-input-placeholder {
+  color: var(--secondary-tint-5) !important;
+}
+
+input::-moz-placeholder {
+  color: var(--secondary-tint-5) !important;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  color: var(--secondary-tint-5) !important;
+}
+
+input:-moz-placeholder {
+  color: var(--secondary-tint-5) !important;
+  opacity: 1;
+}
+
+
+
 .sidebar-menu .menu-item-container a {
   color: var(--secondary-tint-2);
 }
@@ -836,9 +917,42 @@ a {
   background-image: url('../image/menu_vector_active.png');
 }
 
+/* news-ticker */
+.news {
+  background-image: url('../image/news_bg.png');
+  background-size: 100%;
+}
+
+.news-ticker {
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.news-ticker .ticker-container {
+  display: inline-block;
+  padding-right: 100%;
+  /* برای ایجاد فضای خالی در سمت راست */
+  animation: ticker 30s linear infinite;
+}
 
 
-@media (max-width: 900px) {}
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    width: 100%;
+  }
+}
 
 @media (max-width: 768px) {}
 
