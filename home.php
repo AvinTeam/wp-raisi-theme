@@ -6,11 +6,16 @@
 
 <div class="d-flex flex-row">
 
-<?php
-    get_sidebar();
+    <?php get_sidebar(); ?>
 
-    get_component('header');
-?>
+
+    <div class="main-content">
+
+    <?php
+        get_component('header');
+        get_component('footer');
+    ?>
+    </div>
 </div>
 
 

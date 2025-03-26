@@ -9,7 +9,7 @@ function image_url($path)
 
 function get_component($path)
 {
-    require_once RAISI_VIEWS . "/$path.php";
+    require RAISI_VIEWS . "/$path.php";
 }
 
 function sanitize_number($text)

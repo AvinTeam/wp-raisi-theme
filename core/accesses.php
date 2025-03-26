@@ -5,16 +5,14 @@
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
 
-
-
 function custom_theme_setup()
 {
     register_nav_menus([
-        'primary' => 'فهرست اصلی',
+        'primary'     => 'فهرست اصلی',
+        'footer-menu' => 'فهرست فوتر',
      ]);
 }
 add_action('after_setup_theme', 'custom_theme_setup');
-
 
 // ابتدا مطمئن شوید کلاس والد وجود دارد
 if (! class_exists('Walker_Nav_Menu_Edit')) {
@@ -57,27 +55,27 @@ add_filter('wp_edit_nav_menu_walker', function () {
     return 'Custom_Walker_Nav_Menu_Edit';
 }, 10, 2);
 
-
-
-
 add_action('wp_update_nav_menu_item', 'save_menu_item_image', 10, 3);
-function save_menu_item_image($menu_id, $menu_item_db_id, $args) {
-    if (isset($_POST['menu-item-image'][$menu_item_db_id])) {
-        $image_id = (int) $_POST['menu-item-image'][$menu_item_db_id];
+function save_menu_item_image($menu_id, $menu_item_db_id, $args)
+{
+    if (isset($_POST[ 'menu-item-image' ][ $menu_item_db_id ])) {
+        $image_id = (int) $_POST[ 'menu-item-image' ][ $menu_item_db_id ];
         update_post_meta($menu_item_db_id, '_menu_item_image', $image_id);
     } else {
         delete_post_meta($menu_item_db_id, '_menu_item_image');
     }
 }
 
-class Custom_Walker_Nav_Menu_Display extends Walker_Nav_Menu {
-    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+class Custom_Walker_Nav_Menu_Display extends Walker_Nav_Menu
+{
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
         $image_id = get_post_meta($item->ID, '_menu_item_image', true);
-        $image = $image_id ? wp_get_attachment_image($image_id, 'thumbnail', false, [
+        $image    = $image_id ? wp_get_attachment_image($image_id, 'thumbnail', false, [
             'class' => 'menu-item-image',
-            'style' => 'vertical-align:middle; margin-left:5px;'
-        ]) : '';
-        
+            'style' => 'vertical-align:middle; margin-left:5px;',
+         ]) : '';
+
         $output .= '<li class="menu-item">';
         $output .= $args->before;
         $output .= '<a href="' . esc_url($item->url) . '">';
@@ -88,31 +86,34 @@ class Custom_Walker_Nav_Menu_Display extends Walker_Nav_Menu {
     }
 }
 
-
-class Custom_Sidebar_Walker extends Walker_Nav_Menu {
-    public function start_lvl(&$output, $depth = 0, $args = null) {
+class Custom_Sidebar_Walker extends Walker_Nav_Menu
+{
+    public function start_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class='submenu m-0 p-0 list-unstyled' style='display:none;'>\n";
     }
 
-    public function end_lvl(&$output, $depth = 0, $args = null) {
+    public function end_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
 
-    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
-        
-        $image_id = get_post_meta($item->ID, '_menu_item_image', true);
+
+        $image_id  = get_post_meta($item->ID, '_menu_item_image', true);
         $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
 
-        $classes = empty($item->classes) ? [] : (array) $item->classes;
-        $is_active = (in_array('current-menu-item', $classes) || in_array('current-menu-ancestor', $classes)) ? 'active' : '';
+        $classes      = empty($item->classes) ? [  ] : (array) $item->classes;
+        $is_active    = (in_array('current-menu-item', $classes) || in_array('current-menu-ancestor', $classes)) ? 'active' : '';
         $has_children = in_array('menu-item-has-children', $classes);
 
         // اضافه کردن کلاس submenu-item برای آیتم‌های زیرمنو
         if ($depth > 0) {
-            $classes[] = 'submenu-item mx-3 my-1';
+            $classes[  ] = 'submenu-item mx-3 my-1';
         }
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
@@ -139,7 +140,28 @@ class Custom_Sidebar_Walker extends Walker_Nav_Menu {
         $output .= '</div>';
     }
 
-    public function end_el(&$output, $item, $depth = 0, $args = null) {
+    public function end_el(&$output, $item, $depth = 0, $args = null)
+    {
         $output .= "</li>\n";
+    }
+}
+
+class Footer_Menu_Walker extends Walker_Nav_Menu
+{
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+        if ($depth === 0 && $args->walker->has_children === false) {
+            if (! empty($output)) {
+                // اضافه کردن تصویر جداکننده قبل از هر آیتم به جز اولین
+                $output .= '<img class="w-12px" src="' . image_url('dat.png') . '" alt="separator">';
+            }
+
+            // ساختار هر آیتم منو
+            $output .= sprintf(
+                '<a href="%s" class="text-secondary-tint-1 f-14x fw-500 mx-3">%s</a>',
+                esc_url($item->url),
+                esc_html($item->title)
+            );
+        }
     }
 }

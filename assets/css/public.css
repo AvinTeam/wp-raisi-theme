@@ -58,17 +58,17 @@
   --primary-shade-4: #300E01;
   --primary-shade-5: #1E0900;
 
-  --secondary-tint-1: #DCD6E4;
-  --secondary-tint-2: #BAADC9;
-  --secondary-tint-3: #9887AF;
-  --secondary-tint-4: #776295;
-  --secondary-tint-5: #573F7C;
-  --secondary-color: #351D63;
-  --secondary-shade-1: #2E1A52;
-  --secondary-shade-2: #271742;
-  --secondary-shade-3: #1F1333;
-  --secondary-shade-4: #180F24;
-  --secondary-shade-5: #100816;
+  --secondary-tint-1: #D5D5DD;
+  --secondary-tint-2: #ABACBB;
+  --secondary-tint-3: #84849B;
+  --secondary-tint-4: #5E5F7B;
+  --secondary-tint-5: #393D5D;
+  --secondary-color: #131D40;
+  --secondary-shade-1: #131936;
+  --secondary-shade-2: #12162C;
+  --secondary-shade-3: #101223;
+  --secondary-shade-4: #0D0D1A;
+  --secondary-shade-5: #070610;
 
   --third-tint-1: #ECE7D5;
   --third-tint-2: #D8D0AD;
@@ -91,17 +91,17 @@
   --filter-primary-tint-2: brightness(0) saturate(100%) invert(81%) sepia(13%) saturate(737%) hue-rotate(321deg) brightness(87%) contrast(101%);
   --filter-primary-tint-3: brightness(0) saturate(100%) invert(88%) sepia(36%) saturate(1376%) hue-rotate(300deg) brightness(102%) contrast(99%);
 
-  --filter-secondary-tint-2: brightness(0) saturate(100%) invert(88%) sepia(9%) saturate(1393%) hue-rotate(207deg) brightness(84%) contrast(84%);
+  --filter-secondary-tint-2: brightness(0) saturate(100%) invert(75%) sepia(15%) saturate(189%) hue-rotate(198deg) brightness(89%) contrast(95%);
 
   --filter-FFFFFF: brightness(0) saturate(100%) invert(88%) sepia(99%) saturate(5%) hue-rotate(266deg) brightness(110%) contrast(97%);
 
 
   /* bs */
   --bs-primary: #800000;
-  --bs-secondary: #351D63;
+  --bs-secondary: #131D40;
 
   --bs-primary-rgb: 128, 0, 0;
-  --bs-secondary-rgb: 53, 29, 99;
+  --bs-secondary-rgb: 19, 29, 64;
   --bs-font-sans-serif: 'IRANSans';
   --bs-body-bg: var(--secondary-shade-3);
   --bs-body-bg-rgb: 31, 19, 51;
