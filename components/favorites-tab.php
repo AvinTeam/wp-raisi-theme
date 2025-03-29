@@ -3,12 +3,12 @@
     <ul class="nav nav-pills d-flex flex-row justify-content-around align-items-center w-100 rounded-8px secondary-shade-2 p-8px"
         id="myTab" role="tablist">
         <li class="nav-item col-lg-5" role="presentation">
-            <button class="nav-link nav-link f-14x fw-500 w-100 active" id="favorites-tab" data-bs-toggle="tab"
+            <button class="nav-link nav-link f-14px fw-500 w-100 active" id="favorites-tab" data-bs-toggle="tab"
                 data-bs-target="#favorites" type="button" role="tab" aria-controls="favorites"
                 aria-selected="true">برگزیده ها</button>
         </li>
         <li class="nav-item col-lg-5" role="presentation">
-            <button class="nav-link f-14x fw-500 w-100" id="last-news-tab" data-bs-toggle="tab"
+            <button class="nav-link f-14px fw-500 w-100" id="last-news-tab" data-bs-toggle="tab"
                 data-bs-target="#last-news" type="button" role="tab" aria-controls="last-news"
                 aria-selected="false">تازه ها</button>
         </li>
@@ -58,11 +58,11 @@
                 </div>
                 <div class="col-lg-9">
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14x text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
                     <div class="d-flex flex-row justify-content-around align-items-center">
-                        <span class="fw-500 f-10x text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
+                        <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                         <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                            class="fw-500 f-10x text-third-color third-shade-4 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                            class="fw-500 f-10px text-third-color third-shade-4 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 }
                     wp_reset_postdata();
                 } else {
-                    echo '<p>هیچ پستی در دسته‌بندی favorites یافت نشد.</p>';
+                    echo '<p>هیچ پستی یافت نشد.</p>';
                 }
             ?>
 
@@ -120,11 +120,11 @@
                 </div>
                 <div class="col-lg-9">
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14x text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
                     <div class="d-flex flex-row justify-content-around align-items-center">
-                        <span class="fw-500 f-10x text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
+                        <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                         <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                            class="fw-500 f-10x text-third-color third-shade-4 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                            class="fw-500 f-10px text-third-color third-shade-4 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                     </div>
                 </div>
             </div>

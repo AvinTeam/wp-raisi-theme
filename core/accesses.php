@@ -121,7 +121,7 @@ class Custom_Sidebar_Walker extends Walker_Nav_Menu
 
         $output .= $indent . '<li' . $class_names . '>';
 
-        $output .= '<div class="h-56px menu-item-container d-flex align-items-center flex-row justify-content-between gap-2 p-16px f-16x fw-500 rounded-8px ' . $is_active . '">';
+        $output .= '<div class="h-56px menu-item-container d-flex align-items-center flex-row justify-content-between gap-2 p-16px f-16px fw-500 rounded-8px ' . $is_active . '">';
         $output .= '<a class="flex-grow-1 d-flex flex-row align-items-center justify-content-start gap-2" href="' . esc_url($item->url) . '">';
 
         if ($image_url) {
@@ -158,7 +158,7 @@ class Footer_Menu_Walker extends Walker_Nav_Menu
 
             // ساختار هر آیتم منو
             $output .= sprintf(
-                '<a href="%s" class="text-secondary-tint-1 f-14x fw-500 mx-3">%s</a>',
+                '<a href="%s" class="text-secondary-tint-1 f-14px fw-500 mx-3">%s</a>',
                 esc_url($item->url),
                 esc_html($item->title)
             );

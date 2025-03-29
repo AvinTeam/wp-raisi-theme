@@ -18,7 +18,12 @@
         <div class="d-flex flex-column p-12px">
             <div class="d-flex flex-row">
                 <div class="main-content">
-                    main-content
+                    <?php
+                    get_component('home-last-news');
+                    ?>
+           
+
+
                 </div>
                 <div class="sidebar">
                     <?php
@@ -78,4 +83,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <?php
 
-get_footer();
+    get_footer();
+
+?>
+
+
+<script>
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 4, // پیشفرض برای دسکتاپ
+    spaceBetween: 20,
+    breakpoints: {
+        // وقتی عرض صفحه کمتر از 960px است
+        960: {
+            slidesPerView: 2.5, // نمایش 2.5 اسلاید
+            spaceBetween: 15
+        },
+        1700: {
+            slidesPerView: 4, // نمایش 2.5 اسلاید
+            spaceBetween: 15
+        }
+    }
+});
+</script>

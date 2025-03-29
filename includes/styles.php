@@ -107,17 +107,32 @@ function raisi_style()
         true
     );
 
+    wp_register_style(
+        'swiper',
+        RAISI_VENDOR . 'swiper/swiper-bundle.min.css',
+        [  ],
+        '11.2.2',
+    );
+
+    wp_register_script(
+        'swiper',
+        RAISI_VENDOR . 'swiper/swiper-bundle.min.js',
+        [  ],
+        '11.2.2',
+
+    );
+
     wp_enqueue_style(
         'raisi_style',
         RAISI_CSS . 'public.css',
-        [ 'bootstrap.rtl', 'bootstrap.icons', 'select2', 'jalalidatepicker' ],
+        [ 'bootstrap.rtl', 'bootstrap.icons', 'swiper', 'jalalidatepicker' ],
         RAISI_VERSION
     );
 
     wp_enqueue_script(
         'raisi_js',
         RAISI_JS . 'public.js',
-        [ 'jquery', 'bootstrap', 'select2', 'jalalidatepicker' ],
+        [ 'jquery', 'bootstrap', 'swiper', 'jalalidatepicker' ],
         RAISI_VERSION,
         true
     );
@@ -126,8 +141,8 @@ function raisi_style()
         'raisi_js',
         'raisi_js',
         [
-            'ajaxurl'         => admin_url('admin-ajax.php'),
-            'nonce'           => wp_create_nonce('ajax-nonce'),
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'nonce'   => wp_create_nonce('ajax-nonce'),
 
          ]
     );

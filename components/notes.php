@@ -3,7 +3,7 @@
     <ul class="nav nav-pills d-flex flex-row justify-content-around align-items-center w-100 rounded-8px secondary-shade-2 p-8px"
         id="myTab" role="tablist">
         <li class="nav-item w-100" role="presentation">
-            <button class="nav-link f-14x fw-500 w-100"> یادداشت ها</button>
+            <button class="nav-link f-14px fw-500 w-100"> یادداشت ها</button>
         </li>
     </ul>
     <div class="h-24px"></div>
@@ -40,12 +40,12 @@
                 </div>
                 <div class="col-lg-9">
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14x text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
 
                     <?php if ($tags): ?>
 
                     <div> <a href="<?php echo esc_url(get_tag_link($tags[ 0 ]->term_id)); ?>"
-                            class="fw-500 f-10x text-third-color p-4px"><?php echo esc_html($tags[ 0 ]->name); ?></a>
+                            class="fw-500 f-10px text-third-color p-4px"><?php echo esc_html($tags[ 0 ]->name); ?></a>
                     </div>
                     <?php endif; ?>
                 </div>

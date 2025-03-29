@@ -15,11 +15,11 @@
                         ?>
                 </nav>
             </div>
-            <div class="text-secondary-tint-1 fw-500 f-14x"> شماره تماس: <span>۹۸۲۱۸۸۷۰۵۲۸۶+</span></div>
+            <div class="text-secondary-tint-1 fw-500 f-14px"> شماره تماس: <span>۹۸۲۱۸۸۷۰۵۲۸۶+</span></div>
         </div>
         <hr class="text-secondary">
         <div class="d-flex flex-row justify-content-between align-items-center">
-            <div class="fw-500 f-10x text-secondary-tint-1 ">
+            <div class="fw-500 f-10px text-secondary-tint-1 ">
                 تمامی حقوق مادی و معنوی این سایت متعلق به بنیاد شهید رئیسی است و استفاده از مطالب با ذکر منبع بلامانع
                 است.
             </div>
