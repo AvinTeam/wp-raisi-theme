@@ -5,7 +5,7 @@ jalaliDatepicker.startWatch({
 
 
 function startLoading() {
-    var overlay = document.getElementById("overlay");
+    let overlay = document.getElementById("overlay");
 
     if (overlay) {
         overlay.style.display = "flex"; // نمایش به صورت flex
@@ -23,7 +23,7 @@ function startLoading() {
 
 function endLoading() {
 
-    var overlay = document.getElementById("overlay");
+    let overlay = document.getElementById("overlay");
 
     if (overlay) {
         overlay.style.transition = "opacity 0.5s ease-in-out"; // اضافه کردن انیمیشن
@@ -75,6 +75,64 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    let tabElms = document.querySelectorAll('button[data-bs-toggle="tab"]');
+
+    tabElms.forEach(function (tab) {
+        tab.addEventListener('shown.bs.tab', function (event) {
+            let activeTab = event.target.textContent;
+            console.log('تب فعال: ' + activeTab);
+
+            // در اینجا می‌توانید عملیات اضافی پس از تغییر تب انجام دهید
+            // مثلاً می‌توانید اطلاعات را از سرور دریافت کنید
+        });
+    });
+
+
+
+
+
+
+
+
+    new Swiper('.swiper-container', {
+        slidesPerView: 4, // پیشفرض برای دسکتاپ
+        spaceBetween: 20,
+        breakpoints: {
+            // وقتی عرض صفحه کمتر از 960px است
+            960: {
+                slidesPerView: 2.7, // نمایش 2.5 اسلاید
+                spaceBetween: 15
+            },
+            1700: {
+                slidesPerView: 4, // نمایش 2.5 اسلاید
+                spaceBetween: 15
+            }
+        }
+    });
+
+
+    new Swiper('.swiper-media', {
+        slidesPerView: 4, // پیشفرض برای دسکتاپ
+        spaceBetween: 20,
+        breakpoints: {
+            // وقتی عرض صفحه کمتر از 960px است
+            960: {
+                slidesPerView: 2.7, // نمایش 2.5 اسلاید
+                spaceBetween: 15
+            },
+            1700: {
+                slidesPerView: 3, // نمایش 2.5 اسلاید
+                spaceBetween: 15
+            }
+        }
+    });
+
+
+
+
+
+
 });
 
 jQuery(document).ready(function ($) {

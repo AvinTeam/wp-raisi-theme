@@ -110,6 +110,20 @@
   --bs-heading-color: var(--secondary-tint-1);
 }
 
+
+.nav-pills {
+  --bs-nav-pills-border-radius: 4px;
+  --bs-nav-pills-link-active-color:  var(--primary-tint-2);
+  --bs-nav-pills-link-active-bg: var(--primary-shade-2);
+}
+.nav-pills .nav-link {
+  color: var(--secondary-tint-1);
+  background-color: var(--secondary-color);
+}
+.nav-pills .nav-link:hover {
+  color: var(--secondary-tint-2);
+}
+
 * {
   font-family: 'IRANSans';
   line-height: 24px;
@@ -645,6 +659,10 @@ a {
   width: 104px;
 }
 
+.w-168px {
+  width: 168px;
+}
+
 /* Spacing height */
 
 .h-4px {
@@ -705,6 +723,10 @@ a {
 
 .h-104px {
   height: 104px;
+}
+
+.h-168px {
+  height: 168px;
 }
 
 /* bottom primary */
@@ -986,14 +1008,12 @@ input:-moz-placeholder {
 }
 
 
-.last-news .nav-pills .nav-link {
-  color: var(--secondary-tint-1);
-  background-color: var(--secondary-color);
-}
 
-.last-news .nav-pills .nav-link.active {
-  color: var(--primary-tint-2);
-  background-color: var(--primary-shade-2);
+.media_cat {
+  background-color: var(--secondary-color);
+  background-image: url('../image/media_bg.png');
+  background-size: 100%;
+  background-position: center;
 }
 
 @keyframes ticker {
