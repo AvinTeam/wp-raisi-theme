@@ -1,6 +1,9 @@
 <div class="d-flex flex-row">
     <div class="main-content">
-        <?php get_component('home-last-news'); ?>
+        <?php
+            get_component('home-slider');
+            get_component('home-last-news');
+        ?>
     </div>
     <div class="sidebar">
         <?php

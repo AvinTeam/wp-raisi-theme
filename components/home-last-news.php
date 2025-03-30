@@ -73,7 +73,7 @@
                                 $categories      = get_the_category();
                                 $main_categories = [  ];
                                 foreach ($categories as $category) {
-                                    if (! in_array($category->slug, [ $parent_category->slug, 'favorites' ])) {
+                                    if (! in_array($category->slug, [ $parent_category->slug, 'favorites', 'slider' ])) {
                                         $main_categories[  ] = [
                                             'name' => $category->name,
                                             'link' => get_category_link($category->term_id),
@@ -86,32 +86,30 @@
                             ?>
 
 
-                    <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
-                        <div class="text-center">
-                            <a href="<?php the_permalink(); ?>" class="w-100 pe-2">
-                                <img class="w-100 rounded-8px"
-                                    src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
-                            </a>
-                        </div>
+                            <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
+                                <div class="text-center">
+                                    <a href="<?php the_permalink(); ?>" class="w-100 pe-2">
+                                        <img class="w-100 rounded-8px"
+                                            src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                                    </a>
+                                </div>
 
 
-                        <a href="<?php the_permalink(); ?>"
-                            class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>"
+                                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
 
-                        <div>
-                            <span class="fw-500 f-12px text-secondary-tint-3"><?php echo get_the_excerpt() ?></span>
-                        </div>
+                                <div>
+                                    <span class="fw-500 f-12px text-secondary-tint-3"><?php echo get_the_excerpt() ?></span>
+                                </div>
 
-                        <div class="d-flex flex-row justify-content-around align-items-center">
-                            <span
-                                class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
-                            <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
-                        </div>
-                    </div>
-                    <div class="h-8px"></div>
-
-                    <?php
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <span
+                                        class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
+                                    <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
+                                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                                </div>
+                            </div>
+                            <div class="h-8px"></div> <?php
                         }
                             wp_reset_postdata();
                         } else {

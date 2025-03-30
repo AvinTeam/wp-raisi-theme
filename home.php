@@ -20,37 +20,11 @@
                 get_view_part('home/media');
                 get_view_part('home/gam');
             ?>
-    
-
-
-
-
-
-
-
-
 
             <?php get_view_part('footer'); ?>
         </div>
     </div>
 </div>
-
-
-<!-- دکمه برای نمایش سایدبار در موبایل -->
-<button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
-    منو
-</button>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

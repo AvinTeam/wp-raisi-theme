@@ -3,8 +3,8 @@
 
 <?php
 
-$parent_category = get_category_by_slug('media'); // یا با نام: get_cat_ID('news')
-$parent_id       = $parent_category->term_id;
+    $parent_category = get_category_by_slug('media'); // یا با نام: get_cat_ID('news')
+    $parent_id       = $parent_category->term_id;
 ?>
 <diV class="last-media">
 <div class="line-between">
@@ -79,7 +79,7 @@ $parent_id       = $parent_category->term_id;
                             $categories      = get_the_category();
                             $main_categories = [  ];
                             foreach ($categories as $category) {
-                                if (! in_array($category->slug, [ $parent_category->slug, 'favorites' ])) {
+                                if (! in_array($category->slug, [ $parent_category->slug, 'favorites', 'slider' ])) {
                                     $main_categories[  ] = [
                                         'name' => $category->name,
                                         'slug' => $category->slug,
@@ -88,7 +88,6 @@ $parent_id       = $parent_category->term_id;
                                 }
                             }
 
-                            // دریافت تاریخ به فرمت Y-m-d (مثل: 2025-03-26)
                             $post_date = get_the_date('Y-m-d');
                         ?>
 

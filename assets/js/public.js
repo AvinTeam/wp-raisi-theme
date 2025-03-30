@@ -90,10 +90,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
+    new Swiper(".home-slider", {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
 
     new Swiper('.swiper-container', {
         slidesPerView: 4, // پیشفرض برای دسکتاپ
