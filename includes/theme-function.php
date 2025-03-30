@@ -76,9 +76,34 @@ function get_header_title()
     } elseif (is_single()) {
         $title = get_the_title();
     } elseif (is_category()) {
-        $title = single_cat_title('', false) . " | دسته‌بندی";
+
+        $title = single_cat_title('', false);
+
+        $current_category = get_queried_object();
+        $ancestors        = get_ancestors($current_category->term_id, 'category');
+        $ancestors        = array_reverse($ancestors);
+
+        $breadcrumb_items = [  ];
+
+        // اضافه کردن دسته‌های والد
+        foreach ($ancestors as $i => $ancestor) {
+            $cat = get_category($ancestor);
+            if ($i) {
+                $breadcrumb_items[  ] = '<img src="' . image_url('dif.png') . '" alt="separator" class="breadcrumb-separator w-10px h-10px mx-2" >';
+            }
+            $breadcrumb_items[  ] = '<a href="' . esc_url(get_category_link($cat->term_id)) . '" class="breadcrumb-item  text-secondary-tint-3">' . $cat->name . '</a>';
+        }
+
+        // اضافه کردن دسته فعلی (اگر دسته‌های والد وجود داشتند، جداکننده اضافه می‌کنیم)
+        if (! empty($ancestors)) {
+            $breadcrumb_items[  ] = '<img src="' . image_url('dif.png') . '" alt="separator" class="breadcrumb-separator w-10px h-10px mx-2">';
+        }
+        $breadcrumb_items[  ] = '<span class=" breadcrumb-item active">' . $current_category->name . '</span>';
+
+        $title = implode('', $breadcrumb_items);
+
     } elseif (is_tag()) {
-        $title = single_tag_title('', false) . " | برچسب";
+        $title = single_tag_title('', false);
     } elseif (is_search()) {
         $title = "نتایج جستجو برای " . get_search_query();
     } elseif (is_404()) {

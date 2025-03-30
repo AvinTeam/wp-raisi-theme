@@ -1,5 +1,6 @@
 <?php
 
+(defined('ABSPATH')) || exit;
 function gregorian_to_jalali($g_y, $g_m, $g_d, $mod = '')
 {
     $g_y   = sanitize_number($g_y);

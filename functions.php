@@ -4,7 +4,7 @@
 
 date_default_timezone_set('Asia/Tehran');
 
-define('RAISI_VERSION', '0.0.1');
+define('RAISI_VERSION', '0.0.2');
 
 define('RAISI_PATH', get_template_directory() . "/");
 define('RAISI_INCLUDES', RAISI_PATH . 'includes/');
@@ -27,6 +27,7 @@ require_once RAISI_INCLUDES . '/styles.php';
 require_once RAISI_INCLUDES . '/theme_filter.php';
 require_once RAISI_INCLUDES . '/theme-function.php';
 require_once RAISI_INCLUDES . '/jdf.php';
+require_once RAISI_INCLUDES . '/taxonomy_image.php';
 
 if (is_admin()) {
 

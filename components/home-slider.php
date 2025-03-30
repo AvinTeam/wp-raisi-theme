@@ -7,8 +7,8 @@
 
 
                     <?php
-                        $args = [
-                            'category_name'  => $parent_category->slug,
+                        $args            = [
+                            'category_name'  => "slider",
                             'posts_per_page' => 4, // نمایش همه پست‌ها
                          ];
 
@@ -20,18 +20,6 @@
 
                                 // دریافت تصویر شاخص (Featured Image)
                                 $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-
-                                // دریافت **فقط دسته‌بندی‌های اصلی** (parent = 0) و به جز news
-                                $categories      = get_the_category();
-                                $main_categories = [  ];
-                                foreach ($categories as $category) {
-                                    if (! in_array($category->slug, [ $parent_category->slug, 'favorites', 'slider' ])) {
-                                        $main_categories[  ] = [
-                                            'name' => $category->name,
-                                            'link' => get_category_link($category->term_id),
-                                         ];
-                                    }
-                                }
 
                                 // دریافت تاریخ به فرمت Y-m-d (مثل: 2025-03-26)
                                 $post_date = get_the_date('Y-m-d');

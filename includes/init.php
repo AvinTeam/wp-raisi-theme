@@ -1,5 +1,6 @@
 <?php
 
+(defined('ABSPATH')) || exit;
 function disable_admin_bar_for_specific_roles($show)
 {
     if (is_user_logged_in()) {
