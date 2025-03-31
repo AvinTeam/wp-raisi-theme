@@ -22,8 +22,11 @@
                     <?php
                         get_component('archive/category');
                         get_component('archive/post');
+                        
 
                     ?>
+
+
 
 
                 </div>

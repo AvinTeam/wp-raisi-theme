@@ -1143,6 +1143,21 @@ input:-moz-placeholder {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+
+
+
+.hero-news.active  {
+  background-color: var(--secondary-shade-2) !important;
+}
+
+.hero-news .hero-news-img {
+  border-color: var(--third-color) !important;
+}
+.hero-news.active .hero-news-img {
+  border-color: red !important;
+}
+
+
 @keyframes ticker {
   0% {
     transform: translateX(0);

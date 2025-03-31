@@ -17,6 +17,15 @@
         <span class="text-secondary-tint-2 fw-500 f-16px">آخرین
             <?php echo $current_category->name ?></span>
     </div>
+    <div class="h-24px"></div>
+
+    <?php if ($current_category->slug== "news" ):
+
+            get_component('archive/hero-news');
+
+        endif;
+
+    ?>
 
     <div class="row row-cols-2 row-cols-lg-4">
 

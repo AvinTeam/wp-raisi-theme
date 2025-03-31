@@ -139,7 +139,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+document.addEventListener('DOMContentLoaded', function () {
+    // عناصر مورد نیاز
+    const previewImage = document.querySelector('.preview-image');
+    const previewTitle = document.querySelector('.preview-title');
+    const heroNewsItems = document.querySelectorAll('.hero-news');
 
+    // تابع برای به روز رسانی پیشنمایش
+    function updatePreview(activeItem) {
+        const image = activeItem.querySelector('.item-image').src;
+        const title = activeItem.querySelector('.item-title').textContent;
+
+        previewImage.src = image;
+        previewTitle.textContent = title;
+    }
+
+    // پیدا کردن آیتم فعال اولیه و به روز رسانی پیشنمایش
+    const initialActiveItem = document.querySelector('.hero-news.active');
+    if (initialActiveItem) {
+        updatePreview(initialActiveItem);
+    }
+
+    // اضافه کردن رویداد کلیک به همه آیتم‌ها
+    heroNewsItems.forEach(item => {
+        item.addEventListener('click', function () {
+            // اگر آیتم قبلاً فعال نبود
+            if (!this.classList.contains('active')) {
+                // حذف کلاس active از همه آیتم‌ها
+                heroNewsItems.forEach(i => i.classList.remove('active'));
+
+                // اضافه کردن کلاس active به آیتم کلیک شده
+                this.classList.add('active');
+
+                // به روز رسانی پیشنمایش
+                updatePreview(this);
+            }
+        });
+    });
+});
 jQuery(document).ready(function ($) {
 
     $('.onlyNumbersInput').on('input paste', function () {
