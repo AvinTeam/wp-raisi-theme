@@ -28,6 +28,7 @@ require_once RAISI_INCLUDES . '/theme_filter.php';
 require_once RAISI_INCLUDES . '/theme-function.php';
 require_once RAISI_INCLUDES . '/jdf.php';
 require_once RAISI_INCLUDES . '/taxonomy_image.php';
+require_once RAISI_INCLUDES . '/meta_boxs.php';
 
 if (is_admin()) {
     require_once RAISI_INCLUDES . '/install.php';

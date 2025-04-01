@@ -28,6 +28,29 @@ function sanitize_number($text)
 
 }
 
+function raisi_remote(string $url)
+{
+    $res = wp_remote_get(
+        $url,
+        [
+            'timeout' => 1000,
+         ]);
+
+    if (is_wp_error($res)) {
+        $result = [
+            'code'   => 1,
+            'result' => $res->get_error_message(),
+         ];
+    } else {
+        $result = [
+            'code'   => 0,
+            'result' => json_decode($res[ 'body' ]),
+         ];
+    }
+
+    return $result;
+}
+
 function is_transient()
 {
     $is_transient = get_transient('is_transient');
@@ -74,10 +97,57 @@ function get_header_title()
     if (is_home() || is_front_page()) {
         $title = "صفحه اصلی";
     } elseif (is_single()) {
-        $title = get_the_title();
-    } elseif (is_category()) {
 
-        $title = single_cat_title('', false);
+        $title      = get_the_title();
+        $categories = get_the_category();
+
+        if (! empty($categories)) {
+            // فیلتر کردن دسته‌های نامطلوب و تفکیک والد/فرزند
+            $parent_categories = [  ];
+            $child_categories  = [  ];
+
+            foreach ($categories as $category) {
+                if (in_array($category->slug, [ 'slider', 'favorites' ])) {
+                    continue; // رد کردن دسته slider
+                }
+
+                if ($category->parent == 0) {
+                    $parent_categories[  ] = $category;
+                } else {
+                    $child_categories[  ] = $category;
+                }
+            }
+
+            // ساختاردهی نهایی با ترتیب صحیح
+            $ordered_categories = [  ];
+
+            foreach ($parent_categories as $parent) {
+                $ordered_categories[  ] = $parent;
+
+                // اضافه کردن زیردسته‌های مربوط به این والد
+                foreach ($child_categories as $key => $child) {
+                    if ($child->parent == $parent->term_id) {
+                        $ordered_categories[  ] = $child;
+                        unset($child_categories[ $key ]);
+                    }
+                }
+            }
+
+            // ایجاد نان‌کرم‌ها بر اساس ordered_categories
+            $breadcrumb_items = [  ];
+
+            foreach ($ordered_categories as $i => $category) {
+                if ($i > 0) {
+                    $breadcrumb_items[  ] = '<img src="' . image_url('dif.png') . '" alt="separator" class="breadcrumb-separator w-10px h-10px mx-2">';
+                }
+
+                $breadcrumb_items[  ] = '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="breadcrumb-item text-secondary-tint-3">' . $category->name . '</a>';
+            }
+
+            $title = implode('', $breadcrumb_items);
+        }
+
+    } elseif (is_category()) {
 
         $current_category = get_queried_object();
         $ancestors        = get_ancestors($current_category->term_id, 'category');
@@ -113,4 +183,17 @@ function get_header_title()
     }
     return $title;
 
+}
+
+function linktocode($input)
+{
+    if (preg_match('/^[a-zA-Z0-9]+$/', $input)) {
+        return $input; // ورودی همان کد است
+    }
+
+    if (preg_match('/aparat\.com\/v\/([a-zA-Z0-9]+)/', $input, $matches)) {
+        return $matches[ 1 ]; // کد ویدیو را برگردان
+    }
+
+    return null;
 }
