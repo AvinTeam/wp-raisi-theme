@@ -30,5 +30,6 @@ require_once RAISI_INCLUDES . '/jdf.php';
 require_once RAISI_INCLUDES . '/taxonomy_image.php';
 
 if (is_admin()) {
+    require_once RAISI_INCLUDES . '/install.php';
 
 }
