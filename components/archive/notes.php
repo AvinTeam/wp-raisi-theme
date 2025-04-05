@@ -35,7 +35,7 @@
         <div class="col py-2 ">
             <div class="secondary-shade-4 rounded-12px p-24px">
 
-                <div class="fw-500 f-14px text-secondary-tint-2 text-justify"><?php echo get_the_excerpt() ?></div>
+                <a href="<?php the_permalink(); ?>" class="fw-500 f-14px text-secondary-tint-2 text-justify"><?php echo get_the_excerpt() ?></a>
                 <div class="h-32px"></div>
 
                 <div class="w-100 d-flex flex-row align-items-center">
