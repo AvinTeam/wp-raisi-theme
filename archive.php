@@ -1,5 +1,8 @@
 <?php get_header();
 
+    $current_category_id = get_queried_object_id();
+    $current_category    = get_category($current_category_id);
+
 ?>
 
 
@@ -20,9 +23,16 @@
             <div class="d-flex flex-row">
                 <div class="main-content">
                     <?php
-                        get_component('archive/category');
-                        get_component('archive/post');
-                        
+
+                        if ($current_category->slug == "notes") {
+                            
+                            get_component('archive/notes');
+                        }
+                        else{
+
+                            get_component('archive/category');
+                            get_component('archive/post');
+                        }
 
                     ?>
 

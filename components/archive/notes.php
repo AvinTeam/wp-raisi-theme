@@ -13,21 +13,7 @@
         }
 
     ?>
-    <div class="line-between">
-        <span class="text-secondary-tint-2 fw-500 f-16px">آخرین
-            <?php echo $current_category->name ?></span>
-    </div>
-    <div class="h-24px"></div>
-
-    <?php if ($current_category->slug == "news"):
-
-            get_component('archive/hero-news');
-
-        endif;
-
-    ?>
-
-    <div class="row row-cols-2 row-cols-lg-4">
+    <div class="row row-cols-2 row-cols-lg-3">
 
         <?php
             $args = [
@@ -40,59 +26,37 @@
             if ($news_query->have_posts()) {
                 while ($news_query->have_posts()) {
                     $news_query->the_post();
-
                     $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-
-                    $categories      = get_the_category();
-                    $main_categories = [  ];
-                    foreach ($categories as $category) {
-
-                        if (! in_array($category->slug, [ 'favorites', 'slider' ]) && $category->category_parent != 0) {
-                            $main_categories[  ] = [
-                                'name' => $category->name,
-                                'slug' => $category->slug,
-                                'link' => get_category_link($category->term_id),
-                             ];
-                        }
-                    }
-
-                    $post_date = get_the_date('Y-m-d');
+                    $post_date  = get_the_date('Y-m-d');
+                    $tags = get_the_tags();
                 ?>
 
 
-        <div class="col py-1">
-            <div class="secondary-shade-4 rounded-12px p-8px">
-                <div class="text-center">
-                    <a href="<?php the_permalink(); ?>" class="w-100 pe-2 position-relative">
-                        <img class="w-100 rounded-8px" src="<?php echo esc_url($thumbnail_url); ?>"
-                            alt="<?php the_title_attribute(); ?>">
+        <div class="col py-2 ">
+            <div class="secondary-shade-4 rounded-12px p-24px">
 
+                <div class="fw-500 f-14px text-secondary-tint-2 text-justify"><?php echo get_the_excerpt() ?></div>
+                <div class="h-32px"></div>
 
-                        <?php if ($main_categories[ 0 ][ 'slug' ] == "video"): ?>
-                        <img class="position-absolute top-50 start-50 translate-middle z-3 w-40px"
-                            src="<?php echo image_url('play-circle.png') ?>">
+                <div class="w-100 d-flex flex-row align-items-center">
 
+                    <div class="text-center  border-end border-1 border-secondary">
+                        <a href="<?php the_permalink(); ?>" class="w-100 "><img class="rounded-8px w-48px h-48px"
+                                src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between align-items-start h-48px">
+
+                        <?php if ($tags): ?>
+                        <a href="<?php echo esc_url(get_tag_link($tags[ 0 ]->term_id)); ?>"
+                            class="fw-500 f-10px text-third-color p-4px"><?php echo esc_html($tags[ 0 ]->name); ?></a>
                         <?php endif; ?>
 
-                    </a>
+                        <span
+                            class="fw-500 f-10px text-secondary-tint-2 ellipsis-text ms-2"><?php echo tarikh($post_date, 'm'); ?></span>
+                    </div>
                 </div>
 
-                <a href="<?php the_permalink(); ?>"
-                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
-
-                <?php if ($main_category_slug == "news"): ?>
-
-                <div>
-                    <span class="fw-500 f-12px text-secondary-tint-3"><?php echo get_the_excerpt() ?></span>
-                </div>
-
-                <?php endif; ?>
-
-                <div class="d-flex flex-row justify-content-between align-items-center">
-                    <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
-                    <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
-                </div>
             </div>
         </div>
         <?php
