@@ -2,12 +2,12 @@
     <!-- تب‌ها -->
     <ul class="nav nav-pills d-flex flex-row justify-content-around align-items-center w-100 rounded-8px secondary-shade-2 p-8px"
         id="myTab" role="tablist">
-        <li class="nav-item col-lg-5" role="presentation">
+        <li class="nav-item col-6 col-lg-5" role="presentation">
             <button class="nav-link nav-link f-14px fw-500 w-100 active" id="favorites-tab" data-bs-toggle="tab"
                 data-bs-target="#favorites" type="button" role="tab" aria-controls="favorites"
                 aria-selected="true">برگزیده ها</button>
         </li>
-        <li class="nav-item col-lg-5" role="presentation">
+        <li class="nav-item col-6 col-lg-5" role="presentation">
             <button class="nav-link f-14px fw-500 w-100" id="last-news-tab" data-bs-toggle="tab"
                 data-bs-target="#last-news" type="button" role="tab" aria-controls="last-news"
                 aria-selected="false">تازه ها</button>
@@ -51,12 +51,12 @@
                     ?>
             <div class="w-100 d-flex flex-row align-items-center secondary-shade-2 rounded-8px p-8px">
 
-                <div class="col-lg-3 text-center  border-end border-1 border-secondary">
+                <div class="col-1 col-lg-3 text-center  border-end border-1 border-secondary">
                     <a href="<?php the_permalink(); ?>" class="w-100 pe-2"><img class="rounded-4px"
                             src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
                     </a>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-11 col-lg-9">
                     <a href="<?php the_permalink(); ?>"
                         class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
                     <div class="d-flex flex-row justify-content-between align-items-center">

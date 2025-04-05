@@ -20,7 +20,7 @@
 
         <div class="d-flex flex-column p-12px">
 
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-lg-row flex-column-reverse">
                 <div class="main-content">
                     <?php
 
