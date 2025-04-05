@@ -1,11 +1,32 @@
-<?php
+<?php get_header(); ?>
 
-get_header();
-?>
+<div class="d-flex flex-row">
 
-<div class="container mt-5">
-    <h2 class="text-center"><?php the_title(); ?></h2>
-    <div class="content"><?php the_content(); ?></div>
+    <?php get_sidebar(); ?>
+
+
+    <div class="main-content">
+
+        <?php get_view_part('header'); ?>
+
+        <div class="d-flex flex-column p-12px">
+
+        <?php the_content(); ?>
+
+            <div class="h-24px"></div>
+
+
+            <?php get_view_part('footer'); ?>
+        </div>
+    </div>
 </div>
 
-<?php get_footer(); ?>
+
+
+
+
+<?php
+
+    get_footer();
+
+?>

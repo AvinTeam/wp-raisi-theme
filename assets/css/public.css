@@ -946,14 +946,11 @@ a {
 }
 
 
-
-
-
+/* input */
 input::placeholder {
   color: var(--secondary-tint-5) !important;
 }
 
-/* برای پشتیبانی گسترده‌تر */
 input::-webkit-input-placeholder {
   color: var(--secondary-tint-5) !important;
 }
@@ -972,8 +969,14 @@ input:-moz-placeholder {
   opacity: 1;
 }
 
+/* hr */
+hr {
+  border: none;
+  height: 1px;
+}
 
 
+/* custom */
 .sidebar-menu .menu-item-container a {
   color: var(--secondary-tint-2);
 }
@@ -985,7 +988,6 @@ input:-moz-placeholder {
 .sidebar-menu .menu-item-container img {
   filter: var(--filter-secondary-tint-2);
 }
-
 
 .sidebar-menu .menu-item-container.active {
   background-color: var(--primary-shade-3);
@@ -1045,6 +1047,17 @@ input:-moz-placeholder {
   padding-right: 100%;
   /* برای ایجاد فضای خالی در سمت راست */
   animation: ticker 30s linear infinite;
+}
+
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .sidebar-tab .nav-pills .nav-link {
@@ -1164,16 +1177,6 @@ input:-moz-placeholder {
   border-color: red !important;
 }
 
-
-@keyframes ticker {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
 
 @media (max-width: 992px) {
   .main-content {

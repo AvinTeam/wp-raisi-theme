@@ -176,6 +176,8 @@ function get_header_title()
         $title = single_tag_title('', false);
     } elseif (is_search()) {
         $title = "نتایج جستجو برای " . get_search_query();
+    } elseif (is_page()) {
+        $title = the_title();
     } elseif (is_404()) {
         $title = get_bloginfo('name') . "صفحه پیدا نشد | ";
     } else {

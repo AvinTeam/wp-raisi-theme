@@ -19,7 +19,7 @@
     </div>
     <div class="h-24px"></div>
 
-    <?php if ($current_category->slug== "news" ):
+    <?php if ($current_category->slug == "news"):
 
             get_component('archive/hero-news');
 
@@ -55,6 +55,15 @@
                              ];
                         }
                     }
+
+                    if ($category->slug == 'notes' && empty($main_categories)) {
+                        $main_categories[  ] = [
+                            'name' => $category->name,
+                            'slug' => $category->slug,
+                            'link' => get_category_link($category->term_id),
+                         ];
+                    }
+
                     $post_date = get_the_date('Y-m-d');
                 ?>
 
@@ -87,7 +96,7 @@
 
                 <?php endif; ?>
 
-                <div class="d-flex flex-row justify-content-around align-items-center">
+                <div class="d-flex flex-row justify-content-between align-items-center">
                     <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                     <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
                         class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
