@@ -1162,9 +1162,6 @@ hr {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 .hero-news.active {
   background-color: var(--secondary-shade-2) !important;
 }
@@ -1177,6 +1174,9 @@ hr {
   border-color: red !important;
 }
 
+.footer-menu a:hover {
+  color: var(--primary-tint-2);
+}
 
 @media (max-width: 992px) {
   .main-content {
