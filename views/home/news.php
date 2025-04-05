@@ -1,13 +1,15 @@
-<div class="d-flex flex-lg-row flex-column">
+<div class="d-flex flex-lg-row flex-column-reverse">
     <div class="main-content">
-        <?php
-            get_component('home-slider');
+        <div class="d-lg-block d-none">
+
+            <?php
+            get_component('home/slider');
         ?>
-        <div class="d-lg-block d-none" >
-        <?php
-            get_component('home-last-news');
-        ?>
+
         </div>
+        <?php
+            get_component('home/last-news');
+        ?>
     </div>
     <div class="sidebar">
         <?php
@@ -18,9 +20,9 @@
 
     </div>
     <div class="main-content">
-        <div class="d-lg-none d-block" >
-        <?php
-            get_component('home-last-news');
+        <div class="d-lg-none d-block">
+            <?php
+            get_component('home/slider');
         ?>
         </div>
     </div>
