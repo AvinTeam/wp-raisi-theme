@@ -1029,6 +1029,14 @@ hr {
   background-image: url('../image/menu_vector_active.png');
 }
 
+
+.offcanvas {
+  background-color: linear-gradient(180deg, #12162C 0%, #070610 53.65%);
+  background-image: url('../image/bg-sidebar.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 /* news-ticker */
 .news {
   background-image: url('../image/news_bg.png');
@@ -1045,7 +1053,6 @@ hr {
 .news-ticker .ticker-container {
   display: inline-block;
   padding-right: 100%;
-  /* برای ایجاد فضای خالی در سمت راست */
   animation: ticker 30s linear infinite;
 }
 

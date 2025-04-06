@@ -11,7 +11,7 @@
     }
 
     .link-icon.copied {
-        filter: brightness(1) sepia(1) saturate(5) hue-rotate(0deg);
+        filter: var(--filter-primary-tint-2);
     }
     </style>
 
