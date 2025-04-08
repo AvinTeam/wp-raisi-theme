@@ -2,10 +2,6 @@
             <div class="swiper home-slider">
                 <div class="swiper-wrapper">
                     <!-- slider -->
-
-
-
-
                     <?php
                         $args            = [
                             'category_name'  => "slider",
@@ -50,4 +46,4 @@
 
 
         </div>
-        <div class="h-24px"></div>
+        <div class="h-40px"></div>

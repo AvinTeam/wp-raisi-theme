@@ -35,7 +35,8 @@
         <div class="col py-2 ">
             <div class="secondary-shade-4 rounded-12px p-24px">
 
-                <a href="<?php the_permalink(); ?>" class="fw-500 f-14px text-secondary-tint-2 text-justify"><?php echo get_the_excerpt() ?></a>
+                <a href="<?php the_permalink(); ?>"
+                    class="fw-500 f-14px text-secondary-tint-2 text-justify"><?php echo get_the_excerpt() ?></a>
                 <div class="h-32px"></div>
 
                 <div class="w-100 d-flex flex-row align-items-center">
@@ -81,15 +82,19 @@
     ?>
     <nav aria-label="Page navigation">
         <ul
-            class="pagination justify-content-center border border-1 border-secondary p-2px d-flex flex-row-reverse gap-3 rounded-8px">
+            class="pagination justify-content-between border border-1 border-secondary p-2px d-flex flex-row-reverse rounded-8px mx-auto">
             <?php
                 // دکمه قبلی
                 if ($paged > 1) {
                     $prev_page = $paged - 1;
-                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $prev_page, $current_url)) . '">></a></li>';
+                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $prev_page, $current_url)) . '"><i class="bi bi-chevron-left text-secondary-tint-1"></i></a></li>';
                 } else {
-                    echo '<li class="page-item disabled"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">></a></li>';
+                    echo '<li class="page-item disabled"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px"></a></li>';
                 }
+            ?>
+
+            <div class="d-flex flex-row justify-content-center align-items-center gap-16">
+                <?php
 
                 // منطق نمایش شماره صفحات
                 if ($total_pages <= 4) {
@@ -143,11 +148,14 @@
                         echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $total_pages, $current_url)) . '">' . $total_pages . '</a></li>';
                     }
                 }
+            ?>
+            </div>
+            <?php
 
                 // دکمه بعدی
                 if ($paged < $total_pages) {
                     $next_page = $paged + 1;
-                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $next_page, $current_url)) . '"><</a></li>';
+                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $next_page, $current_url)) . '"><i class="bi bi-chevron-right text-secondary-tint-1"></i></a></li>';
                 } else {
                     echo '<li class="page-item disabled"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px"><</a></li>';
                 }

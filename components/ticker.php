@@ -1,4 +1,4 @@
-<div class="news secondary-shade-1 d-flex flex-row justify-content-around align-items-center w-100">
+<div class="news secondary-shade-1 d-flex flex-row justify-content-around align-items-center w-100 border-top border-bottom border-1 border-secondary">
     <div class="col-2 col-lg-1 d-flex flex-row align-items-center justify-content-around">
         <span class="text-secondary-tint-2  fw-500 f-12px">آخرین مطالب</span>
         <img class="w-12px" src="<?php echo image_url('dif-red.png') ?>">

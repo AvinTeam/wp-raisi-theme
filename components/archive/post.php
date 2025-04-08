@@ -17,7 +17,7 @@
         <span class="text-secondary-tint-2 fw-500 f-16px">آخرین
             <?php echo $current_category->name ?></span>
     </div>
-    <div class="h-24px"></div>
+    <div class="h-32px"></div>
 
     <?php if ($current_category->slug == "news"):
 
@@ -78,20 +78,21 @@
                 </div>
 
                 <a href="<?php the_permalink(); ?>"
-                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px"><?php the_title(); ?></a>
+
 
                 <?php if ($main_category_slug == "news"): ?>
 
-                <div>
-                    <span class="fw-500 f-12px text-secondary-tint-3"><?php echo get_the_excerpt() ?></span>
+                <div class="pt-8px w-100 border-1 border-secondary border-top ">
+                    <span class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
                 </div>
 
                 <?php endif; ?>
 
-                <div class="d-flex flex-row justify-content-between align-items-center">
+                <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                     <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                     <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                 </div>
             </div>
         </div>
@@ -117,15 +118,19 @@
     ?>
     <nav aria-label="Page navigation">
         <ul
-            class="pagination justify-content-center border border-1 border-secondary p-2px d-flex flex-row-reverse gap-3 rounded-8px">
+            class="pagination justify-content-between border border-1 border-secondary p-2px d-flex flex-row-reverse rounded-8px mx-auto">
             <?php
                 // دکمه قبلی
                 if ($paged > 1) {
                     $prev_page = $paged - 1;
-                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $prev_page, $current_url)) . '">></a></li>';
+                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $prev_page, $current_url)) . '"><i class="bi bi-chevron-left text-secondary-tint-1"></i></a></li>';
                 } else {
-                    echo '<li class="page-item disabled"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">></a></li>';
+                    echo '<li class="page-item disabled"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px"></a></li>';
                 }
+            ?>
+
+            <div class="d-flex flex-row justify-content-center align-items-center gap-16">
+                <?php
 
                 // منطق نمایش شماره صفحات
                 if ($total_pages <= 4) {
@@ -179,11 +184,14 @@
                         echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $total_pages, $current_url)) . '">' . $total_pages . '</a></li>';
                     }
                 }
+            ?>
+            </div>
+            <?php
 
                 // دکمه بعدی
                 if ($paged < $total_pages) {
                     $next_page = $paged + 1;
-                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $next_page, $current_url)) . '"><</a></li>';
+                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $next_page, $current_url)) . '"><i class="bi bi-chevron-right text-secondary-tint-1"></i></a></li>';
                 } else {
                     echo '<li class="page-item disabled"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px"><</a></li>';
                 }

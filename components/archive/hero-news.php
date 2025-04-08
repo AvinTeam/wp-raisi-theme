@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="col">
-        <div class="d-flex flex-column justify-content-between pe-3" style="height: 306px;">
+        <div class="d-flex flex-column justify-content-between" style="height: 306px;">
 
             <?php
                 $args = [
@@ -44,21 +44,21 @@
                         $count_row++;
                     ?>
             <div
-                class="hero-news w-100 d-flex flex-row align-items-center secondary-shade-1 rounded-12px p-8px h-88px gap-2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <?php echo $active_class ?>">
+                class="hero-news w-100 d-flex flex-row align-items-center secondary-shade-1 rounded-12px p-8px h-88px gap-2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <?php echo $active_class ?>">
 
-                <div class="hero-news-img col-lg-2 text-center border-start border-1">
-                    <a href="<?php the_permalink(); ?>" class="w-100 ms-2"><img
-                            class="rounded-8px w-56px h-56px item-image" src="<?php echo esc_url($thumbnail_url); ?>"
+                <div class="hero-news-img text-center border-start border-1 d-flex align-items-center">
+                    <a href="<?php the_permalink(); ?>" class="w-100 ms-2">
+                        <img class="rounded-8px w-56px h-56px item-image" src="<?php echo esc_url($thumbnail_url); ?>"
                             alt="<?php the_title_attribute(); ?>">
                     </a>
                 </div>
-                <div class="col-lg-10">
+                <div class="w-100">
                     <a href="<?php the_permalink(); ?>"
                         class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2 item-title"><?php the_title(); ?></a>
-                    <div class="d-flex flex-row justify-content-between align-items-center px-2">
+                    <div class="d-flex flex-row justify-content-between align-items-center px-8px">
                         <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                         <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                            class="fw-500 f-10px text-secondary-tint-2 bg-secondary rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                            class="fw-500 f-10px text-secondary-tint-2 bg-secondary rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                     </div>
                 </div>
             </div>
@@ -75,4 +75,4 @@
     </div>
 </div>
 
-<div class="h-24px"></div>
+<div class="h-40px"></div>

@@ -5,7 +5,7 @@
             <?php get_component('home/media-last')?>
 
         </div>
-        <div class="col-12 col-lg-5 d-flex flex-row justify-content-around align-items-center media_cat py-lg-0 py-5">
+        <div class="col-12 col-lg-5 d-flex flex-row justify-content-center align-items-center media_cat py-lg-0 py-5">
             <?php get_component('home/media-category')?>
         </div>
     </div>

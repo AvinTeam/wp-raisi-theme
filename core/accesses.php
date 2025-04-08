@@ -136,7 +136,7 @@ class Custom_Sidebar_Walker extends Walker_Nav_Menu
 
         // اضافه کردن کلاس submenu-item برای آیتم‌های زیرمنو
         if ($depth > 0) {
-            $classes[] = 'submenu-item mx-3 my-1';
+            $classes[] = 'submenu-item mx-3 mb-8px';
         }
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
@@ -145,7 +145,7 @@ class Custom_Sidebar_Walker extends Walker_Nav_Menu
         $output .= $indent . '<li' . $class_names . '>';
 
         $output .= '<div class="h-56px menu-item-container d-flex align-items-center flex-row justify-content-between gap-2 f-16px fw-500 rounded-8px ' . $is_active . '">';
-        $output .= '<a class="flex-grow-1 d-flex flex-row align-items-center justify-content-start gap-2 p-16px" href="' . esc_url($item->url) . '">';
+        $output .= '<a class="flex-grow-1 d-flex flex-row align-items-center justify-content-start gap-2 p-8px" href="' . esc_url($item->url) . '">';
 
         if ($image_url) {
             $output .= '<img class="w-24px h-24px" src="' . esc_url($image_url) . '" alt="' . esc_attr($item->title) . '">';
@@ -155,8 +155,8 @@ class Custom_Sidebar_Walker extends Walker_Nav_Menu
         $output .= '</a>';
 
         if ($has_children) {
-            $output .= '<button class="btn menu-toggle arrow-toggle rounded-circle w-24px h-24px d-flex justify-content-center align-items-center me-2 w-20px h-20px" data-menu-type="' . $is_active . '" data-menu-id="' . $item->ID . '" aria-expanded="false">';
-            $output .= '<i class="arrow-icon bi bi-chevron-left d-flex align-items-center flex-row justify-content-center "></i>';
+            $output .= '<button class="btn menu-toggle arrow-toggle rounded-circle d-flex justify-content-center align-items-center me-2 p-0  w-20px h-20px" data-menu-type="' . $is_active . '" data-menu-id="' . $item->ID . '" aria-expanded="false">';
+            $output .= '<i class="arrow-icon bi bi-chevron-left d-flex align-items-center flex-row justify-content-center f-10px"></i>';
             $output .= '</button>';
         }
 

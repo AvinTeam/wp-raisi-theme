@@ -17,8 +17,8 @@
         <span class="text-secondary-tint-2 fw-500 f-16px">دسته بندی
             <?php echo $current_category->name ?></span>
     </div>
-    <div class="h-8px"></div>
-    <div class="row row-cols-2 row-cols-lg-5 gap-1">
+    <div class="h-32px"></div>
+    <div class="row ">
 
         <?php foreach ($subcategories as $subcategory):
             $image_id = get_term_meta($subcategory->term_id, 'category-image-id', true);
@@ -26,12 +26,13 @@
         ?>
 
         <a href="<?php echo get_category_link($subcategory->term_id) ?>"
-            class="col h-168px w-168px bg-secondary rounded-12px d-flex justify-content-center align-items-center">
+            class="h-168px w-168px bg-secondary rounded-12px d-flex justify-content-center align-items-center">
             <div class="d-flex flex-column align-items-center">
                 <img class="w-80px" src="<?php echo $cat_image ?>" alt="<?php echo $subcategory->name ?>">
                 <span class="f-14px text-secondary-tint-2 mt-2"><?php echo $subcategory->name ?></span>
             </div>
         </a>
+        <div class="w-24px"></div>
 
         <?php endforeach; ?>
 
@@ -42,4 +43,4 @@
     endif; // پایان if برای بررسی دسته اصلی
     ?>
 </div>
-<div class="h-24px"></div>
+<div class="h-40px"></div>

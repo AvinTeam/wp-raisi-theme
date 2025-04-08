@@ -9,16 +9,16 @@
         <span><a href="<?php echo get_category_link($parent_id) ?>" class="text-secondary-tint-2 fw-500 f-16px">مشاهده
                 همه</a></span>
     </div>
-    <div class="h-8px"></div>
+    <div class="h-16px"></div>
     <!-- تب‌ها -->
 
     <ul class="nav nav-pills d-flex flex-row justify-content-start align-items-center w-100 gap-1" id="myLastNews"
         role="tablist">
 
         <li class="nav-item" role="presentation">
-            <span class="me-2">دسته بندی اخبار:</span>
+            <span class="me-24px">دسته بندی اخبار:</span>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item me-16px" role="presentation">
             <button class="nav-link nav-link f-14px fw-500 active" id="all-news-tab" data-bs-toggle="tab"
                 data-bs-target="#all-news" type="button" role="tab" aria-controls="all-news" aria-selected="true">همه
                 دسته ها</button>
@@ -36,7 +36,7 @@
                     $array_slug[  ] = $child->slug;
 
                     echo '
-                <li class="nav-item" role="presentation">
+                <li class="nav-item me-16px" role="presentation">
                     <button class="nav-link nav-link f-14px fw-500 " id="' . $child->slug . '-tab" data-bs-toggle="tab"
                         data-bs-target="#' . $child->slug . '" type="button" role="tab" aria-controls="' . $child->slug . '"
                         aria-selected="true">' . $child->name . '</button>
@@ -46,7 +46,7 @@
         ?>
 
     </ul>
-    <div class="h-24px"></div>
+    <div class="h-32px"></div>
 
     <!-- محتوای تب‌ها -->
     <div class="tab-content" id="myTabContent">
@@ -81,7 +81,6 @@
                                     }
                                 }
 
-                                // دریافت تاریخ به فرمت Y-m-d (مثل: 2025-03-26)
                                 $post_date = get_the_date('Y-m-d');
                             ?>
 
@@ -96,26 +95,26 @@
 
 
                                 <a href="<?php the_permalink(); ?>"
-                                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px "><?php the_title(); ?></a>
 
-                                <div>
-                                    <span class="fw-500 f-12px text-secondary-tint-3"><?php echo get_the_excerpt() ?></span>
+                                <div class="pt-8px w-100 border-1 border-secondary border-top ">
+                                    <span class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
                                 </div>
 
-                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                                     <span
                                         class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                                     <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                                 </div>
                             </div>
-                            <div class="h-8px"></div> <?php
-                        }
-                            wp_reset_postdata();
-                        } else {
-                            echo '<p>هیچ پستی یافت نشد.</p>';
-                        }
-                    ?>
+                            <div class="h-8px"></div>                                                      <?php
+                                                          }
+                                                              wp_reset_postdata();
+                                                          } else {
+                                                              echo '<p>هیچ پستی یافت نشد.</p>';
+                                                          }
+                                                      ?>
                 </div>
             </div>
 
@@ -157,17 +156,17 @@
                         </div>
 
                         <a href="<?php the_permalink(); ?>"
-                            class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
+                            class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px"><?php the_title(); ?></a>
 
-                        <div>
-                            <span class="fw-500 f-12px text-secondary-tint-3"><?php echo get_the_excerpt() ?></span>
+                        <div class="pt-8px w-100 border-1 border-secondary border-top ">
+                            <span class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
                         </div>
 
-                        <div class="d-flex flex-row justify-content-around align-items-center">
+                        <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                             <span
                                 class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                             <a href="<?php echo esc_url(get_category_link($categories->term_id)); ?>"
-                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle p-4px"><?php echo esc_html($categories->name); ?></a>
+                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($categories->name); ?></a>
                         </div>
                     </div>
                     <div class="h-8px"></div>
