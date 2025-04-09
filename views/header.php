@@ -1,6 +1,6 @@
 <div class="w-100 d-none d-lg-block secondary-shade-4 position-sticky top-0 z-3">
     <div class="d-flex flex-row align-items-center justify-content-between p-24px h-88px">
-        <div class="col-6 text-secondary-tint-1 f-20px fw-bold "><?php echo get_header_title() ?></div>
+        <div class="col-6 text-secondary-tint-1 f-20px fw-bold ps-24px "><?php echo get_header_title() ?></div>
         <div class="col-6 d-flex flex-row align-items-center gap-4 justify-content-end">
 
             <?php

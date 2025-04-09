@@ -29,3 +29,12 @@ function custom_login_cookie_expiration($expiration)
     return 30 * DAY_IN_SECONDS;
 }
 add_filter('auth_cookie_expiration', 'custom_login_cookie_expiration');
+
+
+function search_filter($query) {
+    if ($query->is_search && !is_admin()) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'search_filter');
