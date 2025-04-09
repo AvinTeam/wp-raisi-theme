@@ -722,6 +722,10 @@ a {
   margin-left: 24px;
 }
 
+.mx-16px{
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+}
 
 .border-third-shade-4 {
   border-color: var(--third-shade-4) !important;

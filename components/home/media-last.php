@@ -112,7 +112,7 @@
 
 
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2 h-64px"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
                     <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                         <span
@@ -183,7 +183,7 @@
                     </div>
 
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2 h-64px"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
                     <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                         <span

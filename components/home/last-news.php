@@ -85,36 +85,37 @@
                             ?>
 
 
-                            <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
-                                <div class="text-center">
-                                    <a href="<?php the_permalink(); ?>" class="w-100 pe-2">
-                                        <img class="w-100 rounded-8px"
-                                            src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
-                                    </a>
-                                </div>
+                    <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
+                        <div class="text-center">
+                            <a href="<?php the_permalink(); ?>" class="w-100 pe-2">
+                                <img class="w-100 rounded-8px" src="<?php echo esc_url($thumbnail_url); ?>"
+                                    alt="<?php the_title_attribute(); ?>">
+                            </a>
+                        </div>
 
 
-                                <a href="<?php the_permalink(); ?>"
-                                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px "><?php the_title(); ?></a>
+                        <a href="<?php the_permalink(); ?>"
+                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
-                                <div class="pt-8px w-100 border-1 border-secondary border-top ">
-                                    <span class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
-                                </div>
+                        <div class="pt-8px w-100 border-1 border-secondary border-top ">
+                            <span
+                                class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
+                        </div>
 
-                                <div class="d-flex flex-row justify-content-between align-items-center p-8px">
-                                    <span
-                                        class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
-                                    <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                                        class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
-                                </div>
-                            </div>
-                            <div class="h-8px"></div>                                                      <?php
-                                                          }
-                                                              wp_reset_postdata();
-                                                          } else {
-                                                              echo '<p>هیچ پستی یافت نشد.</p>';
-                                                          }
-                                                      ?>
+                        <div class="d-flex flex-row justify-content-between align-items-center p-8px">
+                            <span
+                                class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
+                            <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
+                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                        </div>
+                    </div>
+                    <div class="h-8px"></div>                                              <?php
+                                                  }
+                                                      wp_reset_postdata();
+                                                  } else {
+                                                      echo '<p>هیچ پستی یافت نشد.</p>';
+                                                  }
+                                              ?>
                 </div>
             </div>
 
@@ -156,10 +157,11 @@
                         </div>
 
                         <a href="<?php the_permalink(); ?>"
-                            class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px"><?php the_title(); ?></a>
+                            class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
                         <div class="pt-8px w-100 border-1 border-secondary border-top ">
-                            <span class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
+                            <span
+                                class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
                         </div>
 
                         <div class="d-flex flex-row justify-content-between align-items-center p-8px">

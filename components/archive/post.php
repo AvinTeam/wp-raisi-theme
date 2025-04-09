@@ -78,7 +78,7 @@
                 </div>
 
                 <a href="<?php the_permalink(); ?>"
-                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
 
                 <?php if ($main_category_slug == "news"): ?>
@@ -132,34 +132,10 @@
             <div class="d-flex flex-row justify-content-center align-items-center gap-16">
                 <?php
 
-                // منطق نمایش شماره صفحات
-                if ($total_pages <= 4) {
-                    // اگر تعداد صفحات 4 یا کمتر بود، همه رو نمایش بده
-                    for ($i = 1; $i <= $total_pages; $i++) {
-                        if ($i == $paged) {
-                            echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
-                        } else {
-                            echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $i, $current_url)) . '">' . $i . '</a></li>';
-                        }
-                    }
-                } else {
-                    // اگر تعداد صفحات بیشتر از 4 بود
-                    if ($paged <= 2) {
-                        // نمایش 3 صفحه اول + سه نقطه + صفحه آخر
-                        for ($i = 1; $i <= 3; $i++) {
-                            if ($i == $paged) {
-                                echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
-                            } else {
-                                echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $i, $current_url)) . '">' . $i . '</a></li>';
-                            }
-                        }
-                        echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
-                        echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $total_pages, $current_url)) . '">' . $total_pages . '</a></li>';
-                    } elseif ($paged >= $total_pages - 1) {
-                        // نمایش صفحه اول + سه نقطه + 3 صفحه آخر
-                        echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', 1, $current_url)) . '">1</a></li>';
-                        echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
-                        for ($i = $total_pages - 2; $i <= $total_pages; $i++) {
+                    // منطق نمایش شماره صفحات
+                    if ($total_pages <= 4) {
+                        // اگر تعداد صفحات 4 یا کمتر بود، همه رو نمایش بده
+                        for ($i = 1; $i <= $total_pages; $i++) {
                             if ($i == $paged) {
                                 echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
                             } else {
@@ -167,24 +143,48 @@
                             }
                         }
                     } else {
-                        // نمایش صفحه اول + سه نقطه + صفحه فعلی و اطرافش + سه نقطه + صفحه آخر
-                        echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', 1, $current_url)) . '">1</a></li>';
-                        echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
-
-                        // صفحه قبل، فعلی و بعد
-                        for ($i = $paged - 1; $i <= $paged + 1; $i++) {
-                            if ($i == $paged) {
-                                echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
-                            } else {
-                                echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $i, $current_url)) . '">' . $i . '</a></li>';
+                        // اگر تعداد صفحات بیشتر از 4 بود
+                        if ($paged <= 2) {
+                            // نمایش 3 صفحه اول + سه نقطه + صفحه آخر
+                            for ($i = 1; $i <= 3; $i++) {
+                                if ($i == $paged) {
+                                    echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
+                                } else {
+                                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $i, $current_url)) . '">' . $i . '</a></li>';
+                                }
                             }
-                        }
+                            echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
+                            echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $total_pages, $current_url)) . '">' . $total_pages . '</a></li>';
+                        } elseif ($paged >= $total_pages - 1) {
+                            // نمایش صفحه اول + سه نقطه + 3 صفحه آخر
+                            echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', 1, $current_url)) . '">1</a></li>';
+                            echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
+                            for ($i = $total_pages - 2; $i <= $total_pages; $i++) {
+                                if ($i == $paged) {
+                                    echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
+                                } else {
+                                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $i, $current_url)) . '">' . $i . '</a></li>';
+                                }
+                            }
+                        } else {
+                            // نمایش صفحه اول + سه نقطه + صفحه فعلی و اطرافش + سه نقطه + صفحه آخر
+                            echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', 1, $current_url)) . '">1</a></li>';
+                            echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
 
-                        echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
-                        echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $total_pages, $current_url)) . '">' . $total_pages . '</a></li>';
+                            // صفحه قبل، فعلی و بعد
+                            for ($i = $paged - 1; $i <= $paged + 1; $i++) {
+                                if ($i == $paged) {
+                                    echo '<li class="page-item active" aria-current="page"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">' . $i . '</span></li>';
+                                } else {
+                                    echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $i, $current_url)) . '">' . $i . '</a></li>';
+                                }
+                            }
+
+                            echo '<li class="page-item disabled"><span class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px">…</span></li>';
+                            echo '<li class="page-item"><a class="page-link w-48px h-48px d-flex justify-content-center align-items-center rounded-8px" href="' . esc_url(add_query_arg('page', $total_pages, $current_url)) . '">' . $total_pages . '</a></li>';
+                        }
                     }
-                }
-            ?>
+                ?>
             </div>
             <?php
 
