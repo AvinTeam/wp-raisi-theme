@@ -82,9 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
         tab.addEventListener('shown.bs.tab', function (event) {
             let activeTab = event.target.textContent;
             console.log('تب فعال: ' + activeTab);
-
-            // در اینجا می‌توانید عملیات اضافی پس از تغییر تب انجام دهید
-            // مثلاً می‌توانید اطلاعات را از سرور دریافت کنید
         });
     });
 
@@ -101,16 +98,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     new Swiper('.swiper-container', {
-        slidesPerView: 4, // پیشفرض برای دسکتاپ
+        slidesPerView: 4,
         spaceBetween: 20,
         breakpoints: {
-            // وقتی عرض صفحه کمتر از 960px است
             960: {
-                slidesPerView: 2.7, // نمایش 2.5 اسلاید
+                slidesPerView: 2.7,
                 spaceBetween: 15
             },
             1700: {
-                slidesPerView: 4, // نمایش 2.5 اسلاید
+                slidesPerView: 4,
                 spaceBetween: 15
             }
         }
@@ -118,16 +114,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     new Swiper('.swiper-media', {
-        slidesPerView: 4, // پیشفرض برای دسکتاپ
+        slidesPerView: 4,
         spaceBetween: 20,
         breakpoints: {
-            // وقتی عرض صفحه کمتر از 960px است
+
             960: {
-                slidesPerView: 2.7, // نمایش 2.5 اسلاید
+                slidesPerView: 2.7,
                 spaceBetween: 15
             },
             1700: {
-                slidesPerView: 3, // نمایش 2.5 اسلاید
+                slidesPerView: 3,
                 spaceBetween: 15
             }
         }
@@ -140,12 +136,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 document.addEventListener('DOMContentLoaded', function () {
-    // عناصر مورد نیاز
     const previewImage = document.querySelector('.preview-image');
     const previewTitle = document.querySelector('.preview-title');
     const heroNewsItems = document.querySelectorAll('.hero-news');
 
-    // تابع برای به روز رسانی پیشنمایش
     function updatePreview(activeItem) {
         const image = activeItem.querySelector('.item-image').src;
         const title = activeItem.querySelector('.item-title').textContent;
@@ -154,33 +148,95 @@ document.addEventListener('DOMContentLoaded', function () {
         previewTitle.textContent = title;
     }
 
-    // پیدا کردن آیتم فعال اولیه و به روز رسانی پیشنمایش
     const initialActiveItem = document.querySelector('.hero-news.active');
     if (initialActiveItem) {
         updatePreview(initialActiveItem);
     }
 
-    // اضافه کردن رویداد کلیک به همه آیتم‌ها
     heroNewsItems.forEach(item => {
         item.addEventListener('click', function () {
-            // اگر آیتم قبلاً فعال نبود
             if (!this.classList.contains('active')) {
-                // حذف کلاس active از همه آیتم‌ها
                 heroNewsItems.forEach(i => i.classList.remove('active'));
-
-                // اضافه کردن کلاس active به آیتم کلیک شده
                 this.classList.add('active');
-
-                // به روز رسانی پیشنمایش
                 updatePreview(this);
             }
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 jQuery(document).ready(function ($) {
+
+
+
+
+
+    $('#ticker-container').hover(function () {
+        const ticker = document.getElementById('ticker-container');
+        ticker.style.animationPlayState = 'paused';
+
+    }, function () {
+        const ticker = document.getElementById('ticker-container');
+        ticker.style.animationPlayState = 'running';
+    }
+    );
+
+
 
     $('.onlyNumbersInput').on('input paste', function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
+    let tickerContainer = $('#ticker-container').html();
+
+    let newTicker = tickerContainer;
+
+    for (let i = 0; i < 10; i++) {
+
+
+        newTicker += tickerContainer;
+
+    }
+
+    $('#ticker-container').html(newTicker);
+
+
+
+    const tickerContainer2 = document.getElementById('ticker-container');
+    const widthInPx = tickerContainer2.offsetWidth;
+
+    let newSpeedMs = widthInPx / 100;
+
+    const ticker = document.getElementById('ticker-container');
+    ticker.style.animationDuration = `${newSpeedMs}s`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 

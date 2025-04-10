@@ -13,9 +13,7 @@
         <img class="w-100 " src="<?php echo image_url('biography.png') ?>" alt="biography">
     </div>
 </div>
-<div class="h-32px"></div>
-<hr class="bg-secondary">
-<div class="h-32px"></div>
+<hr class="text-secondary my-32px">
 
 <div class="d-flex flex-column flex-lg-row">
     <div class="col-12 col-lg-5 p-12px">

@@ -28,10 +28,8 @@
                         }
                     ?>
                     <div class="h-24px"></div>
-                    <div class="d-lg-block d-none">
 
-                        <?php get_view_part('post/shearing'); ?>
-                    </div>
+                    <?php get_view_part('post/shearing'); ?>
                 </div>
             </div>
             <div class="h-24px"></div>

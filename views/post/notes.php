@@ -7,8 +7,7 @@
 <div class="p-24px secondary-shade-4 rounded-8px">
 
     <p class="fw-bold f-20px "><?php the_title(); ?></p>
-    <hr class="bg-secondary">
-    <div class="h-12px"></div>
+    <hr class="text-secondary mb-12px">
     <div class="f-14px fw-500 text-secondary-tint-2"><?php the_content(); ?></div>
     <div class="w-100 d-flex flex-row align-items-center">
 
@@ -25,7 +24,7 @@
             <?php endif; ?>
 
             <span
-                class="fw-500 f-10px text-secondary-tint-3 ellipsis-text ms-2"><?php echo tarikh($post_date, 'm'); ?></span>
+                class="fw-500 f-10px text-secondary-tint-3 ms-2"><?php echo tarikh($post_date, 'm'); ?></span>
         </div>
     </div>
 

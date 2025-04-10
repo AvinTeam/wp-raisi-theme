@@ -56,8 +56,8 @@
                 </div>
                 <div class="ps-8px w-100">
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text h-40px d-flex align-items-center"><?php the_title(); ?></a>
-                    <div class="d-flex flex-row justify-content-between align-items-center w-100">
+                        class="fw-500 f-14px text-secondary-tint-2 text-2-lines h-40px d-flex align-items-center"><span class="text-2-lines"><?php the_title(); ?></span></a>
+                    <div class="d-flex flex-row justify-content-between align-items-center w-100 mt-4px">
                         <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
 
                         <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
@@ -112,22 +112,25 @@
 
             <div class="w-100 d-flex flex-row align-items-center secondary-shade-2 rounded-8px p-8px">
 
-                <div class="col-lg-3 text-center  border-end border-1 border-secondary">
-                    <a href="<?php the_permalink(); ?>" class="w-100 pe-2"><img class="rounded-4px"
+                <div class="text-center border-end border-1 border-third-shade-4 pe-8px">
+                    <a href="<?php the_permalink(); ?>" class="w-100"><img class="rounded-4px w-48px h-48px"
                             src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
                     </a>
                 </div>
-                <div class="col-lg-9">
+                <div class="ps-8px w-100">
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text ms-2"><?php the_title(); ?></a>
-                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        class="fw-500 f-14px text-secondary-tint-2 h-40px d-flex align-items-center"><span class="text-2-lines"><?php the_title(); ?></span></a>
+                    <div class="d-flex flex-row justify-content-between align-items-center w-100 mt-4px">
                         <span class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
+
                         <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                            class="fw-500 f-10px text-third-color third-shade-4 rounded-circle p-4px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                            class="fw-500 f-10px text-third-color third-shade-4 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                     </div>
                 </div>
             </div>
             <div class="h-8px"></div>
+
+
 
             <?php
                 }

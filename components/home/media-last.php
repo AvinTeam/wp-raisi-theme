@@ -92,7 +92,7 @@
                         ?>
 
 
-                <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
+                <div class="swiper-slide rounded-12px p-8px" style="width: 206px;">
                     <div class="text-center">
                         <a href="<?php the_permalink(); ?>"
                             class="w-100 pe-2 position-relative">
@@ -102,7 +102,7 @@
 
 
                             <?php if ($main_categories[ 0 ][ 'slug' ] == "video"): ?>
-                            <img class="position-absolute top-50 start-50 translate-middle z-3 w-40px"
+                            <img class="position-absolute top-50 start-50 translate-middle z-1 w-40px"
                                 src="<?php echo image_url('play-circle.png') ?>">
 
                             <?php endif; ?>
@@ -112,7 +112,7 @@
 
 
                     <a href="<?php the_permalink(); ?>"
-                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 text-3-lines pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
                     <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                         <span
@@ -121,7 +121,6 @@
                             class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                     </div>
                 </div>
-                <div class="h-8px"></div>
 
                 <?php
                     }
@@ -174,7 +173,7 @@
 
 
                             <?php if ($slug == "video"): ?>
-                            <img class="position-absolute top-50 start-50 translate-middle z-3 w-40px"
+                            <img class="position-absolute top-50 start-50 translate-middle z-1 w-40px"
                                 src="<?php echo image_url('play-circle.png') ?>">
 
                             <?php endif; ?>
@@ -183,7 +182,7 @@
                     </div>
 
                     <a href="<?php the_permalink(); ?>"
-                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 text-3-lines pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
                     <div class="d-flex flex-row justify-content-between align-items-center p-8px">
                         <span

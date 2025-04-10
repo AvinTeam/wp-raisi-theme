@@ -84,9 +84,7 @@
   --third-shade-4: #2D290D;
   --third-shade-5: #1B1808;
 
-
   --sidebar-width: 264px;
-
 
   --filter-primary: brightness(0) saturate(100%) invert(11%) sepia(24%) saturate(7339%) hue-rotate(350deg) brightness(122%) contrast(115%);
   --filter-primary-tint-1: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(2677%) hue-rotate(298deg) brightness(100%) contrast(89%);
@@ -122,9 +120,9 @@
   line-height: 24px;
 }
 
-body {
+/* body {
   max-width: 1440px;
-}
+} */
 
 a {
   text-decoration: none;
@@ -140,14 +138,6 @@ a {
 
 .sidebar {
   width: var(--sidebar-width);
-}
-
-.ellipsis-text {
-  display: inline-block;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 
@@ -626,14 +616,6 @@ a {
   padding-left: 0rem !important;
 }
 
-.pe-1,
-.pe-2,
-.pe-3,
-.pe-4,
-.pe-5 {
-  padding-right: 0rem !important;
-}
-
 .ps-8px {
   padding-right: 8px !important;
 }
@@ -642,12 +624,29 @@ a {
   padding-right: 24px !important;
 }
 
+.pe-1,
+.pe-2,
+.pe-3,
+.pe-4,
+.pe-5 {
+  padding-right: 0rem !important;
+}
+
+
 .pe-8px {
   padding-left: 8px !important;
 }
 
+.pe-12px {
+  padding-left: 12px !important;
+}
+
 .pe-16px {
   padding-left: 16px !important;
+}
+
+.pe-24px {
+  padding-left: 24px !important;
 }
 
 .pt-8px {
@@ -683,7 +682,10 @@ a {
   padding-bottom: 12px !important;
 }
 
-
+.py-32px {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
 
 
 .ms-1,
@@ -694,12 +696,25 @@ a {
   margin-left: 0rem !important;
 }
 
+.ms-12px {
+  margin-right: 12px !important;
+}
+
+.ms-16px {
+  margin-right: 16px !important;
+}
+
+
 .me-1,
 .me-2,
 .me-3,
 .me-4,
 .me-5 {
   margin-right: 0rem !important;
+}
+
+.mt-4px {
+  margin-top: 4px;
 }
 
 .mt-16px {
@@ -722,10 +737,22 @@ a {
   margin-left: 24px;
 }
 
-.mx-16px{
+.mx-16px {
   margin-left: 16px !important;
   margin-right: 16px !important;
 }
+
+.my-12px {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+}
+
+.my-32px {
+  margin-top: 32px !important;
+  margin-bottom: 32px !important;
+}
+
+
 
 .border-third-shade-4 {
   border-color: var(--third-shade-4) !important;
@@ -738,10 +765,6 @@ a {
 .border-end {
   border-right: none !important;
 }
-
-
-
-
 
 
 /* Radius */
@@ -970,6 +993,10 @@ a {
 
 
 /* gap */
+.gap-8 {
+  gap: 8px;
+}
+
 .gap-16 {
   gap: 16px;
 }
@@ -1098,6 +1125,50 @@ hr {
   opacity: 1;
 }
 
+.text-1-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-4-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-5-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* custom */
 
@@ -1162,7 +1233,7 @@ hr {
   background-image: url('../image/menu_vector.png');
   background-size: 100%;
   background-position: center;
-  background-blend-mode: screen;
+  /* background-blend-mode: screen; */
 }
 
 .sidebar-menu .submenu .submenu-item .menu-item-container:hover {
@@ -1195,7 +1266,7 @@ hr {
 .news {
   background-image: url('../image/news_bg.png');
   background-size: 100%;
-  background-blend-mode: color-burn;
+  /* background-blend-mode: color-burn; */
 }
 
 .news-ticker {
@@ -1208,7 +1279,7 @@ hr {
 .news-ticker .ticker-container {
   display: inline-block;
   padding-right: 100%;
-  animation: ticker 50s linear infinite;
+  animation: ticker 100s linear infinite;
 }
 
 
@@ -1258,6 +1329,18 @@ hr {
   background-color: var(--bs-body-bg);
   padding: 0 10px;
 }
+
+.line-end:after {
+  display: block;
+  flex: 1 1 auto;
+  border-bottom: 1px solid var(--secondary-color);
+  content: "";
+}
+
+
+
+
+
 
 .media_cat {
   background-color: var(--secondary-color);
@@ -1335,7 +1418,7 @@ hr {
 }
 
 .footer-menu a:hover {
-  color: var(--primary-tint-2);
+  color: var(--primary-color);
 }
 
 

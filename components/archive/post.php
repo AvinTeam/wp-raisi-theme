@@ -13,10 +13,12 @@
         }
 
     ?>
-    <div class="line-between">
-        <span class="text-secondary-tint-2 fw-500 f-16px">آخرین
+    <div class="w-100 d-flex align-items-center flex-row line-end">
+        <span class="text-secondary-tint-2 fw-500 f-16px pe-24px">آخرین
             <?php echo $current_category->name ?></span>
     </div>
+
+
     <div class="h-32px"></div>
 
     <?php if ($current_category->slug == "news"):
@@ -69,7 +71,7 @@
 
 
                         <?php if ($main_categories[ 0 ][ 'slug' ] == "video"): ?>
-                        <img class="position-absolute top-50 start-50 translate-middle z-3 w-40px"
+                        <img class="position-absolute top-50 start-50 translate-middle z-1 w-40px"
                             src="<?php echo image_url('play-circle.png') ?>">
 
                         <?php endif; ?>
@@ -78,13 +80,14 @@
                 </div>
 
                 <a href="<?php the_permalink(); ?>"
-                    class="fw-500 f-14px text-secondary-tint-2 ellipsis-text pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
+                    class="fw-500 f-14px text-secondary-tint-2 pb-8px h-72px d-flex align-items-center"><span class=" text-3-lines"><?php the_title(); ?></span></a>
 
 
                 <?php if ($main_category_slug == "news"): ?>
 
-                <div class="pt-8px w-100 border-1 border-secondary border-top ">
-                    <span class="fw-500 f-12px text-secondary-tint-3 h-72px"><?php echo get_the_excerpt() ?></span>
+                <div class="pt-8px w-100 border-1 border-secondary border-top h-72px">
+                    <span
+                        class="fw-500 f-12px text-secondary-tint-3 text-3-lines text-justify"><?php echo get_the_excerpt() ?></span>
                 </div>
 
                 <?php endif; ?>

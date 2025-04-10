@@ -41,7 +41,7 @@
                 </div>
                 <div class="ps-8px w-100">
                     <a href="<?php the_permalink(); ?>"
-                        class="fw-500 f-14px text-secondary-tint-2 ellipsis-text h-40px d-flex align-items-center"><?php the_title(); ?></a>
+                        class="fw-500 f-14px text-secondary-tint-2 text-2-lines h-40px d-flex align-items-center"><?php the_title(); ?></a>
 
                     <?php if ($tags): ?>
 

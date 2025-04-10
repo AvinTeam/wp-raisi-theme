@@ -1,19 +1,18 @@
 <div
-    class="news secondary-shade-1 d-flex flex-row justify-content-around align-items-center w-100 border-top border-bottom border-1 border-secondary">
+    class="news secondary-shade-2 d-flex flex-row justify-content-around align-items-center w-100 border-top border-bottom border-1 border-secondary">
     <div class="d-flex flex-row align-items-center justify-content-around">
         <span class="text-secondary-tint-2 fw-500 f-12px text-nowrap ps-24px">آخرین مطالب</span>
         <img class="w-12px mx-16px" src="<?php echo image_url('dif-red.png') ?>">
     </div>
     <div class="news-ticker">
 
-        <div class="ticker-container">
+        <div class="ticker-container" id="ticker-container">
 
             <?php
                 $recent_posts = new WP_Query([
-                    'posts_per_page' => 10,        // تعداد پست‌ها
-                    'post_status'    => 'publish', // فقط پست‌های منتشر شده
-                    'orderby'        => 'date',    // بر اساس تاریخ
-                    'order'          => 'DESC',    // جدیدترین اول
+                    'post_status' => 'publish',
+                    'orderby'     => 'date',
+                    'order'       => 'DESC',
                  ]);
                 $news_query = new WP_Query($recent_posts);
 
@@ -24,14 +23,14 @@
 
                         if ($m) {
                             echo '
-                            <img class="w-12px mx-16px" src="' . image_url('dif.png') . '">
+
                             ';
                         }
 
                         $m++;
                     ?>
-            <a href="<?php the_permalink(); ?>"
-                class="text-secondary-tint-1 fw-500 f-12px"><?php the_title(); ?></a>
+                    <img class="w-12px mx-16px" src="<?php echo image_url('dif.png')?>">
+            <a href="<?php the_permalink(); ?>" class="text-secondary-tint-1 fw-500 f-12px"><?php the_title(); ?></a>
 
             <?php
                 }
