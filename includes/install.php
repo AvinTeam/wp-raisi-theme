@@ -1,30 +1,31 @@
 <?php
 
 (defined('ABSPATH')) || exit;
-function setup_theme_categories() {
+function setup_theme_categories()
+{
     // دسته‌بندی‌های اصلی
-    $main_categories = array(
-        'news' => 'اخبار',
-        'slider' => 'اسلایدر',
+    $main_categories = [
+        'news'      => 'اخبار',
+        'slider'    => 'اسلایدر',
         'favorites' => 'برگزیده‌ها',
-        'media' => 'چندرسانه‌ای',
-        'notes' => 'یادداشت‌ها'
-    );
+        'media'     => 'چندرسانه‌ای',
+        'notes'     => 'یادداشت‌ها',
+    ];
 
     // زیردسته‌های media
-    $media_subcategories = array(
-        'video' => 'ویدئو',
-        'image' => 'عکس'
-    );
+    $media_subcategories = [
+        'video' => 'فیلم',
+        'image' => 'عکس',
+    ];
 
     // ایجاد یا بررسی دسته‌بندی‌های اصلی
     foreach ($main_categories as $slug => $name) {
         $term = term_exists($slug, 'category');
-        if (!$term) {
-            wp_insert_term($name, 'category', array(
-                'slug' => $slug,
-                'description' => $name
-            ));
+        if (! $term) {
+            wp_insert_term($name, 'category', [
+                'slug'        => $slug,
+                'description' => $name,
+            ]);
         }
     }
 
@@ -33,12 +34,12 @@ function setup_theme_categories() {
     if ($media_cat) {
         foreach ($media_subcategories as $slug => $name) {
             $term = term_exists($slug, 'category');
-            if (!$term) {
-                wp_insert_term($name, 'category', array(
-                    'slug' => $slug,
-                    'parent' => $media_cat['term_id'],
-                    'description' => $name
-                ));
+            if (! $term) {
+                wp_insert_term($name, 'category', [
+                    'slug'        => $slug,
+                    'parent'      => $media_cat[ 'term_id' ],
+                    'description' => $name,
+                ]);
             }
         }
     }
