@@ -19,6 +19,7 @@
                 get_view_part('home/news');
                 get_view_part('home/media');
                 get_view_part('home/gam');
+                get_view_part('home/about');
             ?>
 
             <?php get_view_part('footer'); ?>

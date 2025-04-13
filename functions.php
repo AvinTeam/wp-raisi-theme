@@ -4,7 +4,7 @@
 
 date_default_timezone_set('Asia/Tehran');
 
-define('RAISI_VERSION', '1.0.5');
+define('RAISI_VERSION', '1.0.6');
 
 define('RAISI_PATH', get_template_directory() . "/");
 define('RAISI_INCLUDES', RAISI_PATH . 'includes/');

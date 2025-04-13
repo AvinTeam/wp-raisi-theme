@@ -696,6 +696,10 @@ a {
   margin-left: 0rem !important;
 }
 
+.ms-10px {
+  margin-right: 10px !important;
+}
+
 .ms-12px {
   margin-right: 12px !important;
 }
@@ -711,6 +715,11 @@ a {
 .me-4,
 .me-5 {
   margin-right: 0rem !important;
+}
+
+.me-24px {
+  margin-left: 24px !important;
+
 }
 
 .mt-4px {
@@ -901,7 +910,6 @@ a {
   height: 32px;
 }
 
-
 .h-36px {
   height: 36px;
 }
@@ -936,6 +944,10 @@ a {
 
 .h-104px {
   height: 104px;
+}
+
+.h-130px {
+  height: 130px;
 }
 
 .h-168px {
