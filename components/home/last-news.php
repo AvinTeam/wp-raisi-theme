@@ -102,11 +102,11 @@
                                 class="fw-500 f-12px text-secondary-tint-3 text-3-lines text-justify"><?php echo get_the_excerpt() ?></span>
                         </div>
 
-                        <div class="d-flex flex-row justify-content-between align-items-center p-8px">
+                        <div class="d-flex flex-lg-row flex-column-reverse justify-content-between align-items-center p-8px">
                             <span
                                 class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                             <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
-                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
+                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle mb-2 mb-lg-0 py-4px px-12px"><?php echo esc_html($main_categories[ 0 ][ 'name' ]); ?></a>
                         </div>
                     </div>
                     <div class="h-8px"></div> <?php
@@ -165,11 +165,11 @@
                                 class="fw-500 f-12px text-secondary-tint-3 text-3-lines text-justify"><?php echo get_the_excerpt() ?></span>
                         </div>
 
-                        <div class="d-flex flex-row justify-content-between align-items-center p-8px">
+                        <div class="d-flex flex-lg-row flex-column-reverse justify-content-between align-items-center p-8px">
                             <span
                                 class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                             <a href="<?php echo esc_url(get_category_link($categories->term_id)); ?>"
-                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle py-4px px-12px"><?php echo esc_html($categories->name); ?></a>
+                                class="fw-500 f-10px secondary-color text-secondary-tint-2 rounded-circle mb-2 mb-lg-0 py-4px px-12px"><?php echo esc_html($categories->name); ?></a>
                         </div>
                     </div>
                     <div class="h-8px"></div>

@@ -1,5 +1,5 @@
-<div class="d-flex flex-lg-row flex-column-reverse pt-24px">
-    <div class="main-content px-24px">
+<div class="d-flex flex-lg-row flex-column-reverse">
+    <div class="main-content px-lg-24px">
         <div class="d-lg-block d-none">
             <?php get_component('home/slider'); ?>
         </div>

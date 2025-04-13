@@ -13,7 +13,7 @@
 
         <?php get_view_part('header'); ?>
 
-        <div class="d-flex flex-column pe-24px">
+        <div class="d-flex flex-column p-24px">
 
             <?php
                 get_view_part('home/news');

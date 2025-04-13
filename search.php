@@ -9,7 +9,7 @@
         <?php get_view_part('header'); ?>
         <div class="d-flex flex-column p-12px ">
             <div class="d-flex flex-lg-row flex-column-reverse pt-24px">
-                <div class="main-content px-24px">
+                <div class="main-content px-lg-24px">
                     <?php get_component('search/post'); ?>
                 </div>
                 <div class="sidebar">

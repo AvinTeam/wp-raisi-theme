@@ -93,10 +93,10 @@
 
 
                 <div class="swiper-slide rounded-12px p-8px" style="width: 206px;">
-                    <div class="text-center position-relative">
+                    <div class="text-center h-120px position-relative">
                         <a href="<?php the_permalink(); ?>"
                             class="w-100 pe-2">
-                            <img class="w-100 rounded-8px"
+                            <img class="h-100 rounded-8px"
                                 src="<?php echo esc_url($thumbnail_url); ?>"
                                 alt="<?php the_title_attribute(); ?>">
 
@@ -114,7 +114,7 @@
                     <a href="<?php the_permalink(); ?>"
                     class="fw-500 f-14px text-secondary-tint-2 text-3-lines pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
-                    <div class="d-flex flex-row justify-content-between align-items-center p-8px">
+                    <div class="d-flex flex-lg-row flex-column-reverse justify-content-between align-items-center p-8px">
                         <span
                             class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                         <a href="<?php echo esc_url($main_categories[ 0 ][ 'link' ]); ?>"
@@ -164,10 +164,10 @@
                         ?>
 
                 <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
-                    <div class="text-center position-relative">
+                    <div class="text-center h-120px position-relative">
                         <a href="<?php the_permalink(); ?>"
                             class="w-100 pe-2">
-                            <img class="w-100 rounded-8px"
+                            <img class="h-100 rounded-8px"
                                 src="<?php echo esc_url($thumbnail_url); ?>"
                                 alt="<?php the_title_attribute(); ?>">
 
@@ -184,7 +184,7 @@
                     <a href="<?php the_permalink(); ?>"
                     class="fw-500 f-14px text-secondary-tint-2 text-3-lines pb-8px h-72px d-flex align-items-center"><?php the_title(); ?></a>
 
-                    <div class="d-flex flex-row justify-content-between align-items-center p-8px">
+                    <div class="d-flex flex-lg-row flex-column-reverse justify-content-between align-items-center p-8px">
                         <span
                             class="fw-500 f-10px text-secondary-tint-3"><?php echo tarikh($post_date, 'm'); ?></span>
                         <a href="<?php echo esc_url(get_category_link($categories->term_id)); ?>"
