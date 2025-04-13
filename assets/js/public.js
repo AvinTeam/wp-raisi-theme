@@ -39,7 +39,10 @@ function endLoading() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // مدیریت منوهای فعال در زمان لود صفحه
+
+
+
+
     document.querySelectorAll('.arrow-toggle[data-menu-type="active"]').forEach(button => {
         const menuItem = button.closest('.menu-item');
         const submenu = menuItem.querySelector('.submenu');
@@ -101,6 +104,10 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 4,
         spaceBetween: 20,
         breakpoints: {
+            0: {
+                slidesPerView: 2.7,
+                spaceBetween: 15
+            },
             960: {
                 slidesPerView: 2.7,
                 spaceBetween: 15
@@ -117,7 +124,10 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 4,
         spaceBetween: 20,
         breakpoints: {
-
+            0: {
+                slidesPerView: 2.7,
+                spaceBetween: 15
+            },
             960: {
                 slidesPerView: 2.7,
                 spaceBetween: 15
@@ -131,7 +141,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    let searchComponent = document.querySelectorAll('.search-component');
 
+    if (searchComponent) {
+
+
+        class SearchComponent {
+            constructor(container) {
+                this.container = container;
+                this.toggleBtn = container.querySelector('.search-toggle');
+                this.searchIcon = container.querySelector('.search-icon');
+                this.mobileForm = container.querySelector('.mobile-search-form');
+                this.closeBtn = container.querySelector('.close-search');
+
+                this.initEvents();
+            }
+
+            initEvents() {
+                // نمایش فرم و مخفی کردن آیکون
+                this.toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.searchIcon.classList.add('d-none');
+                    this.mobileForm.classList.remove('d-none');
+                    this.mobileForm.querySelector('input').focus();
+                });
+
+                // بستن فرم و نمایش آیکون
+                const closeForm = () => {
+                    this.mobileForm.classList.add('d-none');
+                    this.searchIcon.classList.remove('d-none');
+                };
+
+                // بستن با دکمه بستن
+                this.closeBtn.addEventListener('click', closeForm);
+
+                // بستن با کلیک خارج از فرم
+                document.addEventListener('click', (e) => {
+                    if (!this.container.contains(e.target) ||
+                        (e.target === this.toggleBtn && !this.mobileForm.classList.contains(
+                            'd-none'))) {
+                        closeForm();
+                    }
+                });
+            }
+        }
+
+        searchComponent.forEach(container => {
+            new SearchComponent(container);
+        });
+    }
 
 
 });
