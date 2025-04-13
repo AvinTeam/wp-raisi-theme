@@ -40,3 +40,16 @@
         </div>
     </div>
 </footer>
+<div
+    class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center px-24px mt-16px">
+
+    <div class="d-flex flex-row align-items-center gap-8">
+        <img class="w-32px" src="<?php echo image_url('avin.png') ?>" alt="">
+        <a href="https://avinmedia.ir/" target="_blank" class="f-12px fw-500 text-white">طراحی و تولید ، گروه فنی و هنری
+            <b class="pt-1 border-bottom border-1 border-white">آوین</b></a>
+    </div>
+    <span class="f-12px fw-500 text-white pt-1" style="direction: ltr;">
+        Copyright © ۲۰۲۳ Shahide Jomhoor. All rights reserved.
+    </span>
+
+</div>
