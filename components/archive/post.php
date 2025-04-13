@@ -64,8 +64,8 @@
 
         <div class="col py-1">
             <div class="secondary-shade-4 rounded-12px p-8px">
-                <div class="text-center">
-                    <a href="<?php the_permalink(); ?>" class="w-100 pe-2 position-relative">
+                <div class="text-center position-relative">
+                    <a href="<?php the_permalink(); ?>" class="w-100 pe-2">
                         <img class="w-100 rounded-8px" src="<?php echo esc_url($thumbnail_url); ?>"
                             alt="<?php the_title_attribute(); ?>">
 

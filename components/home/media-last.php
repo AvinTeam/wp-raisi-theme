@@ -93,9 +93,9 @@
 
 
                 <div class="swiper-slide rounded-12px p-8px" style="width: 206px;">
-                    <div class="text-center">
+                    <div class="text-center position-relative">
                         <a href="<?php the_permalink(); ?>"
-                            class="w-100 pe-2 position-relative">
+                            class="w-100 pe-2">
                             <img class="w-100 rounded-8px"
                                 src="<?php echo esc_url($thumbnail_url); ?>"
                                 alt="<?php the_title_attribute(); ?>">
@@ -164,9 +164,9 @@
                         ?>
 
                 <div class="swiper-slide secondary-shade-4 rounded-12px p-8px">
-                    <div class="text-center">
+                    <div class="text-center position-relative">
                         <a href="<?php the_permalink(); ?>"
-                            class="w-100 pe-2 position-relative">
+                            class="w-100 pe-2">
                             <img class="w-100 rounded-8px"
                                 src="<?php echo esc_url($thumbnail_url); ?>"
                                 alt="<?php the_title_attribute(); ?>">
