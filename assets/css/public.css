@@ -705,6 +705,11 @@ a {
   margin-right: 10px !important;
 }
 
+.ms-lg-10px {
+  margin-right: 10px !important;
+}
+
+
 .ms-12px {
   margin-right: 12px !important;
 }
@@ -723,6 +728,10 @@ a {
 }
 
 .me-24px {
+  margin-left: 24px !important;
+
+}
+.me-lg-24px {
   margin-left: 24px !important;
 
 }
@@ -1444,7 +1453,7 @@ hr {
 
 
 
-@media (max-width: 968px) {
+@media (max-width: 992px) {
 
   .main-content,
   .sidebar {
@@ -1460,9 +1469,21 @@ hr {
     padding-right: 0px;
   }
 
+  .me-lg-24px {
+    margin-left: 0px !important;
+  }
+  .ms-lg-10px {
+    margin-right: 0px !important;
+  }
+  
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+  
+.h-130px {
+  height: auto;
+}
+}
 
 @media (max-width: 576px) {}
 
