@@ -31,3 +31,7 @@
 }
 
 
+#wp-admin-bar-wp-logo-default,
+#wp-admin-bar-wp-logo-external {
+  display: none !important;
+}
