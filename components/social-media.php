@@ -14,7 +14,7 @@
     </a>
 
 
-    <a href="#" target="_blank">
+    <a href="https://www.aparat.com/shahidejomhoor/" target="_blank">
         <div
             class="border border-1 border-secondary rounded-8px secondary-shade-2 w-36px h-36px d-flex justify-content-center align-items-center">
             <img class="w-20px h-20px" src="<?php echo image_url('aparat.png') ?>" alt="aparat">
