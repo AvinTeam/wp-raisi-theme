@@ -132,12 +132,12 @@ function render_image_selection_metabox($post) {
                         var imageIds = [];
                         var container = $('#image-selection-container');
                         
-                        container.empty();
+                        // container.empty();
                         
                         attachments.forEach(function(attachment) {
                             container.append(
                                 '<div class="selected-image" data-id="' + attachment.id + '">' +
-                                '<img src="' + attachment.sizes.thumbnail.url + '" width="150">' +
+                                '<img src="' + attachment.url + '" width="150">' +
                                 '<button type="button" class="remove-image">حذف</button>' +
                                 '</div>'
                             );

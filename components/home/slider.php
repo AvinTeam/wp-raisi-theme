@@ -5,7 +5,6 @@
                     <?php
                         $args            = [
                             'category_name'  => "slider",
-                            'posts_per_page' => 4, // نمایش همه پست‌ها
                          ];
 
                         $news_query = new WP_Query($args);
