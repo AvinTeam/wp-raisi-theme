@@ -141,8 +141,8 @@
                     imageIds.push(attachment.id);
                 });
 
-                let old_img = $('#slider_images').val();
-                $('#slider_images').val(old_img + ',' + imageIds.join(','));
+                let old_img = $('#selected_images').val();
+                $('#selected_images').val(old_img + ',' + imageIds.join(','));
 
 
             });
