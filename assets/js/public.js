@@ -93,12 +93,19 @@ document.addEventListener('DOMContentLoaded', function () {
     new Swiper(".home-slider", {
         direction: "vertical",
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 30,        
+        loop: true,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
         },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        }
     });
+
+
 
     new Swiper('.swiper-container', {
         slidesPerView: 4,
@@ -113,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: 15
             }
         }
+        
     });
 
 
